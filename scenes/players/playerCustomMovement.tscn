@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ci4c6yvdccurk"]
+
+[ext_resource type="Script" uid="uid://boc6wsxud6eqg" path="res://scripts/playerCustomMovement.gd" id="1_ad82n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ad82n"]
+friction = 0.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ad82n"]
+radius = 0.25
+height = 1.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwcdq"]
+radius = 0.25
+height = 1.05
+
+[node name="customPlayer" type="RigidBody3D" unique_id=862396959]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 60.0
+physics_material_override = SubResource("PhysicsMaterial_ad82n")
+script = ExtResource("1_ad82n")
+
+[node name="standHull" type="CollisionShape3D" parent="." unique_id=2107527025]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_ad82n")
+
+[node name="crouchHull" type="CollisionShape3D" parent="." unique_id=1399787318]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 0)
+shape = SubResource("CapsuleShape3D_lwcdq")
+
+[node name="headYaw" type="Node3D" parent="." unique_id=306737238]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.645, 0)
+
+[node name="headPitch" type="Node3D" parent="headYaw" unique_id=671646541]
+unique_name_in_owner = true
+
+[node name="headEyes" type="Camera3D" parent="headYaw/headPitch" unique_id=1388771661]
+unique_name_in_owner = true

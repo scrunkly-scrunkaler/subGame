@@ -1,0 +1,1281 @@
+// Game: subGame
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/dev textures"
+// brush 0
+{
+( -192 -128 -48 ) ( -192 -126.66666666666666 -48 ) ( -192 -128 -47 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 48 -128 -48 ) ( 48 -128 -47 ) ( 49.5 -128 -48 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 48 -128 -640 ) ( 49.5 -128 -640 ) ( 48 -126.66666666666666 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 144 0 0 ) ( 144 1.3333333333333321 0 ) ( 145.5 0 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 144 512 -32 ) ( 145.5 512 -32 ) ( 144 512 -31 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 192 0 -32 ) ( 192 0 -31 ) ( 192 1.3333333333333321 -32 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 1
+{
+( 192 512 0 ) ( 192 -128 0 ) ( 192 -128 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 192 -128 0 ) ( 704 -128 -640 ) ( 192 -128 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 -128 -640 ) ( 704 512 -640 ) ( 192 512 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 192 512 -640 ) ( 704 512 -640 ) ( 192 512 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 192 512 0 ) ( 704 512 -640 ) ( 704 -128 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+}
+// brush 2
+{
+( -704 384 64 ) ( -704 385 64 ) ( -704 384 65 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -320 -128 64 ) ( -320 -128 65 ) ( -319 -128 64 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -320 384 -64 ) ( -319 384 -64 ) ( -320 385 -64 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -192 512 0 ) ( -192 513 0 ) ( -191 512 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -192 512 128 ) ( -191 512 128 ) ( -192 512 129 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -192 512 128 ) ( -192 512 129 ) ( -192 513 128 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 3
+{
+( -192 -128 -320 ) ( -448 512 -640 ) ( -192 512 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 -128 -640 ) ( -448 -128 -640 ) ( -192 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -448 512 -640 ) ( -192 -128 -640 ) ( -192 512 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -448 512 -640 ) ( -192 512 -640 ) ( -192 512 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 512 -640 ) ( -192 -128 -320 ) ( -192 512 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+}
+// brush 4
+{
+( -704 -128 -640 ) ( -704 512 -704 ) ( -704 512 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -320 -368 -640 ) ( -704 -128 -704 ) ( -704 -128 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -320 752 -640 ) ( -704 512 -704 ) ( -320 752 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -256 -384 -640 ) ( -320 -368 -704 ) ( -320 -368 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -256 768 -640 ) ( -320 752 -704 ) ( -256 768 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 -384 -640 ) ( -256 -384 -704 ) ( -256 -384 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 576 -704 ) ( 688 -256 -704 ) ( 704 -192 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 576 -640 ) ( 643.1999999999997 707.2000000000003 -640 ) ( 688 640 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 768 -640 ) ( -256 768 -704 ) ( 512 768 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 576 -368 -640 ) ( 512 -384 -704 ) ( 512 -384 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 768 -704 ) ( 576 752 -640 ) ( 512 768 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 576 -368 -704 ) ( 643.1999999999997 -323.2000000000001 -640 ) ( 643.1999999999994 -323.2000000000005 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 643.1999999999998 707.2 -704 ) ( 576 752 -640 ) ( 576 752 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 688 -256 -640 ) ( 643.1999999999994 -323.2000000000005 -704 ) ( 643.1999999999997 -323.2000000000001 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 688 640 -640 ) ( 643.1999999999998 707.2 -704 ) ( 688 640 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 -192 -640 ) ( 688 -256 -704 ) ( 688 -256 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 576 -640 ) ( 688 640 -704 ) ( 704 576 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 576 -640 ) ( 704 -192 -704 ) ( 704 -192 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 5
+{
+( -192 512 -320 ) ( -448 512 -640 ) ( -448 576 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 512 -320 ) ( -448 576 -640 ) ( -432 640 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 512 -320 ) ( -432 640 -640 ) ( -387.2000000000114 707.1999999999912 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 512 -320 ) ( -387.2000000000114 707.1999999999912 -640 ) ( -320 752 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 512 -320 ) ( -320 752 -640 ) ( -256 768 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 512 -640 ) ( -192 512 -320 ) ( 448 512 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 576 -640 ) ( -448 512 -640 ) ( 704 512 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 512 -320 ) ( 512 768 -640 ) ( 448 512 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 576 752 -640 ) ( 448 512 -320 ) ( 512 768 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 643.199999999999 707.2000000000008 -640 ) ( 448 512 -320 ) ( 576 752 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 688 640 -640 ) ( 448 512 -320 ) ( 643.199999999999 707.2000000000008 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 576 -640 ) ( 448 512 -320 ) ( 688 640 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 576 -640 ) ( 704 512 -640 ) ( 448 512 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+}
+// brush 6
+{
+( -192 -128 -320 ) ( -448 -192 -640 ) ( -448 -128 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 -128 -320 ) ( -432 -256 -640 ) ( -448 -192 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 -128 -320 ) ( -387.20000000001164 -323.1999999999789 -640 ) ( -432 -256 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 -128 -320 ) ( -320 -368 -640 ) ( -387.20000000001164 -323.1999999999789 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( -192 -128 -320 ) ( -256 -384 -640 ) ( -320 -368 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 512 -384 -640 ) ( -192 -128 -320 ) ( 448 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 -128 -640 ) ( 688 -256 -640 ) ( 704 -192 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 -128 -640 ) ( -192 -128 -320 ) ( -448 -128 -640 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 576 -368 -640 ) ( 512 -384 -640 ) ( 448 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 643.1999999999999 -323.19999999999993 -640 ) ( 576 -368 -640 ) ( 448 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 688 -256 -640 ) ( 643.1999999999999 -323.19999999999993 -640 ) ( 448 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 -192 -640 ) ( 688 -256 -640 ) ( 448 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+( 704 -128 -640 ) ( 704 -192 -640 ) ( 448 -128 -320 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+}
+// brush 7
+{
+( 704 -192 -704 ) ( 704 -191 -704 ) ( 704 -192 -703 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 -128 -704 ) ( 704 -128 -703 ) ( 705 -128 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 -192 -704 ) ( 705 -192 -704 ) ( 704 -191 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 832 -128 -640 ) ( 832 -127 -640 ) ( 833 -128 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 832 512 -640 ) ( 833 512 -640 ) ( 832 512 -639 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 960 -128 -640 ) ( 960 -128 -639 ) ( 960 -127 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 8
+{
+( -768 -128 0 ) ( -768 -127 0 ) ( -768 -128 1 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -768 -128 0 ) ( -768 -128 1 ) ( -767 -128 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -768 -128 0 ) ( -767 -128 0 ) ( -768 -127 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( 192 -112 128 ) ( 192 -111 128 ) ( 193 -112 128 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( 192 -112 16 ) ( 193 -112 16 ) ( 192 -112 17 ) "dev textures/dev_measurewall01a" 0 0 0 -0.25 0.25
+( 192 -112 16 ) ( 192 -112 17 ) ( 192 -111 16 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+}
+// brush 9
+{
+( -768 -112 0 ) ( -768 -111 0 ) ( -768 -112 1 ) "dev textures/dev_measurewall01a" 0 0 0 -0.25 0.25
+( -768 -112 0 ) ( -768 -112 1 ) ( -767 -112 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -768 -112 0 ) ( -767 -112 0 ) ( -768 -111 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -752 496 256 ) ( -752 497 256 ) ( -751 496 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -752 496 16 ) ( -751 496 16 ) ( -752 496 17 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -752 496 16 ) ( -752 496 17 ) ( -752 497 16 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+}
+// brush 10
+{
+( -768 496 0 ) ( -768 497 0 ) ( -768 496 1 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -768 496 0 ) ( -768 496 1 ) ( -767 496 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -768 496 0 ) ( -767 496 0 ) ( -768 497 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( 192 512 128 ) ( 192 513 128 ) ( 193 512 128 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( 192 512 16 ) ( 193 512 16 ) ( 192 512 17 ) "dev textures/dev_measurewall01a" 0 0 0 -0.25 0.25
+( 192 512 16 ) ( 192 512 17 ) ( 192 513 16 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+}
+// brush 11
+{
+( -64 480 16 ) ( -64 480 17 ) ( -64 479 16 ) "dev textures/dev_measurewall01a" -256 0 0 0.25 0.25
+( -64 480 16 ) ( -65 480 16 ) ( -64 480 17 ) "dev textures/dev_measurewall01c" 256 0 0 0.25 0.25
+( 64 496 0 ) ( 63 496 0 ) ( 64 495 0 ) "dev textures/dev_measurewall01c" 256 0 0 0.25 -0.25
+( -64 480 128 ) ( -64 479 128 ) ( -65 480 128 ) "dev textures/dev_measurewall01a" 256 0 0 0.25 -0.25
+( 64 496 0 ) ( 64 496 1 ) ( 63 496 0 ) "dev textures/dev_measurewall01a" 256 0 0 0.25 0.25
+( 64 496 0 ) ( 64 495 0 ) ( 64 496 1 ) "dev textures/dev_measurewall01a" -256 0 0 0.25 0.25
+}
+// brush 12
+{
+( -752 -112 112 ) ( -752 -111 112 ) ( -752 -112 113 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -752 -112 112 ) ( -752 -112 113 ) ( -751 -112 112 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -752 -112 112 ) ( -751 -112 112 ) ( -752 -111 112 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+( -704 496 128 ) ( -704 497 128 ) ( -703 496 128 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+( -704 496 128 ) ( -703 496 128 ) ( -704 496 129 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -704 496 128 ) ( -704 496 129 ) ( -704 497 128 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+}
+// brush 13
+{
+( -704 432 112 ) ( -704 433 112 ) ( -704 432 113 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -704 448 112 ) ( -704 448 113 ) ( -703 448 112 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -704 432 112 ) ( -703 432 112 ) ( -704 433 112 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+( -624 496 128 ) ( -624 497 128 ) ( -623 496 128 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+( -624 496 128 ) ( -623 496 128 ) ( -624 496 129 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -64 496 128 ) ( -64 496 129 ) ( -64 497 128 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+}
+// brush 14
+{
+( -704 -128 112 ) ( -704 -127 112 ) ( -704 -128 113 ) "dev textures/dev_measuregeneric01b" 48 112 0 1 1
+( -704 -112 112 ) ( -704 -112 113 ) ( -703 -112 112 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -704 -128 112 ) ( -703 -128 112 ) ( -704 -127 112 ) "dev textures/dev_measuregeneric01b" 0 -48 0 1 1
+( -624 -64 128 ) ( -624 -63 128 ) ( -623 -64 128 ) "dev textures/dev_measuregeneric01b" 0 -48 0 1 1
+( -624 -64 128 ) ( -623 -64 128 ) ( -624 -64 129 ) "dev textures/dev_measuregeneric01b" 0 112 0 1 1
+( -64 -64 128 ) ( -64 -64 129 ) ( -64 -63 128 ) "dev textures/dev_measuregeneric01b" 48 112 0 1 1
+}
+// brush 15
+{
+( -704 -64 128 ) ( -704 0 0 ) ( -704 0 128 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 -64 0 ) ( -704 -64 128 ) ( -512 -64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -512 0 0 ) ( -704 -64 0 ) ( -512 -64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 0 128 ) ( -704 0 0 ) ( -512 0 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 -64 128 ) ( -512 0 0 ) ( -512 -64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+}
+// brush 16
+{
+( -704 64 128 ) ( -704 128 0 ) ( -704 128 128 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 64 0 ) ( -704 64 128 ) ( -576 64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -576 128 0 ) ( -704 64 0 ) ( -576 64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 128 128 ) ( -704 128 0 ) ( -576 128 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 64 128 ) ( -576 128 0 ) ( -576 64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+}
+// brush 17
+{
+( -704 128 128 ) ( -704 192 0 ) ( -704 192 128 ) "dev textures/dev_measuregeneric01red" -64 0 0 1 1
+( -704 128 0 ) ( -704 128 128 ) ( -608 128 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -608 192 0 ) ( -704 128 0 ) ( -608 128 0 ) "dev textures/dev_measuregeneric01red" 0 64 0 1 1
+( -704 192 128 ) ( -704 192 0 ) ( -608 192 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 128 128 ) ( -608 192 0 ) ( -608 128 0 ) "dev textures/dev_measuregeneric01red" -64 0 0 1 1
+}
+// brush 18
+{
+( -704 0 128 ) ( -704 64 0 ) ( -704 64 128 ) "dev textures/dev_measuregeneric01red" -64 0 0 1 1
+( -704 0 0 ) ( -704 0 128 ) ( -544 0 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -544 64 0 ) ( -704 0 0 ) ( -544 0 0 ) "dev textures/dev_measuregeneric01red" 0 64 0 1 1
+( -704 64 128 ) ( -704 64 0 ) ( -544 64 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 0 128 ) ( -544 64 0 ) ( -544 0 0 ) "dev textures/dev_measuregeneric01red" 0 64 0 1 1
+}
+// brush 19
+{
+( -704 448 128 ) ( -704 384 128 ) ( -704 384 0 ) "dev textures/dev_measuregeneric01red" 0 0 180 1 -1
+( -704 384 128 ) ( -512 384 0 ) ( -704 384 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -512 384 0 ) ( -512 448 0 ) ( -704 448 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 -1
+( -704 448 0 ) ( -512 448 0 ) ( -704 448 128 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 448 128 ) ( -512 448 0 ) ( -512 384 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 -1
+}
+// brush 20
+{
+( -704 384 128 ) ( -704 320 128 ) ( -704 320 0 ) "dev textures/dev_measuregeneric01red" 64 0 180 1 -1
+( -704 320 128 ) ( -544 320 0 ) ( -704 320 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -544 320 0 ) ( -544 384 0 ) ( -704 384 0 ) "dev textures/dev_measuregeneric01red" 0 -64 0 1 -1
+( -704 384 0 ) ( -544 384 0 ) ( -704 384 128 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 384 128 ) ( -544 384 0 ) ( -544 320 0 ) "dev textures/dev_measuregeneric01red" 0 -64 0 1 -1
+}
+// brush 21
+{
+( -704 320 128 ) ( -704 256 128 ) ( -704 256 0 ) "dev textures/dev_measuregeneric01red" 0 0 180 1 -1
+( -704 256 128 ) ( -576 256 0 ) ( -704 256 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -576 256 0 ) ( -576 320 0 ) ( -704 320 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 -1
+( -704 320 0 ) ( -576 320 0 ) ( -704 320 128 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 320 128 ) ( -576 320 0 ) ( -576 256 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 -1
+}
+// brush 22
+{
+( -704 256 128 ) ( -704 192 128 ) ( -704 192 0 ) "dev textures/dev_measuregeneric01red" 64 0 180 1 -1
+( -704 192 128 ) ( -608 192 0 ) ( -704 192 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -608 192 0 ) ( -608 256 0 ) ( -704 256 0 ) "dev textures/dev_measuregeneric01red" 0 -64 0 1 -1
+( -704 256 0 ) ( -608 256 0 ) ( -704 256 128 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -704 256 128 ) ( -608 256 0 ) ( -608 192 0 ) "dev textures/dev_measuregeneric01red" 64 0 180 1 -1
+}
+// brush 23
+{
+( -756 -124 128 ) ( -756 -123 128 ) ( -756 -124 129 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -728 -122 128 ) ( -728 -122 129 ) ( -727 -122 128 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -728 -124 128 ) ( -727 -124 128 ) ( -728 -123 128 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -704 -116 160 ) ( -704 -115 160 ) ( -703 -116 160 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 -118 132 ) ( -703 -118 132 ) ( -704 -118 133 ) "dev textures/dev_measurerails01" 0 0 0 -0.25 0.25
+( -72 -116 132 ) ( -72 -116 133 ) ( -72 -115 132 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+}
+// brush 24
+{
+( -762 -116 128 ) ( -762 -115 128 ) ( -762 -116 129 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -764 -116 128 ) ( -764 -116 129 ) ( -763 -116 128 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -764 -116 128 ) ( -763 -116 128 ) ( -764 -115 128 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -756 -112 160 ) ( -756 -111 160 ) ( -755 -112 160 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -756 -112 132 ) ( -755 -112 132 ) ( -756 -112 133 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -758 -112 132 ) ( -758 -112 133 ) ( -758 -111 132 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+}
+// brush 25
+{
+( -72 -124 128 ) ( -72 -123 128 ) ( -72 -124 129 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -72 -124 128 ) ( -72 -124 129 ) ( -71 -124 128 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 0.25
+( -72 -124 128 ) ( -71 -124 128 ) ( -72 -123 128 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 0.25
+( -64 -116 168 ) ( -64 -115 168 ) ( -63 -116 168 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 0.25
+( -64 -116 132 ) ( -63 -116 132 ) ( -64 -116 133 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 0.25
+( -64 -116 132 ) ( -64 -116 133 ) ( -64 -115 132 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 26
+{
+( -764 -124 128 ) ( -764 -123 128 ) ( -764 -124 129 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -764 -124 128 ) ( -764 -124 129 ) ( -763 -124 128 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -764 -124 128 ) ( -763 -124 128 ) ( -764 -123 128 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -756 -116 168 ) ( -756 -115 168 ) ( -755 -116 168 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -756 -116 132 ) ( -755 -116 132 ) ( -756 -116 133 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -756 -116 132 ) ( -756 -116 133 ) ( -756 -115 132 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 27
+{
+( -762 500 128 ) ( -762 500 129 ) ( -762 499 128 ) "dev textures/dev_measurerails01" 0 0 180 0.25 -0.25
+( -756 496 132 ) ( -756 496 133 ) ( -755 496 132 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -764 500 128 ) ( -764 499 128 ) ( -763 500 128 ) "dev textures/dev_measurerails01" 0 0 0 0.25 -0.25
+( -756 496 160 ) ( -755 496 160 ) ( -756 495 160 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 -0.25
+( -764 500 128 ) ( -763 500 128 ) ( -764 500 129 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -758 496 132 ) ( -758 495 132 ) ( -758 496 133 ) "dev textures/dev_measurerails01" 0 0 180 0.25 -0.25
+}
+// brush 28
+{
+( -764 508 128 ) ( -764 508 129 ) ( -764 507 128 ) "dev textures/dev_measuregeneric01b" 0 0 180 0.25 -0.25
+( -756 500 132 ) ( -756 500 133 ) ( -755 500 132 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -764 508 128 ) ( -764 507 128 ) ( -763 508 128 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 -0.25
+( -756 500 168 ) ( -755 500 168 ) ( -756 499 168 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 -0.25
+( -764 508 128 ) ( -763 508 128 ) ( -764 508 129 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -756 500 132 ) ( -756 499 132 ) ( -756 500 133 ) "dev textures/dev_measuregeneric01b" 0 0 180 0.25 -0.25
+}
+// brush 29
+{
+( -756 508 128 ) ( -756 508 129 ) ( -756 507 128 ) "dev textures/dev_measurerails01" 0 0 180 0.25 -0.25
+( -704 502 132 ) ( -704 502 133 ) ( -703 502 132 ) "dev textures/dev_measurerails01" 0 0 0 0.25 0.25
+( -728 508 128 ) ( -728 507 128 ) ( -727 508 128 ) "dev textures/dev_measurerails01" 0 0 0 0.25 -0.25
+( -704 500 160 ) ( -703 500 160 ) ( -704 499 160 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 -0.25
+( -728 506 128 ) ( -727 506 128 ) ( -728 506 129 ) "dev textures/dev_measurerails01" 0 0 0 -0.25 0.25
+( -72 500 132 ) ( -72 499 132 ) ( -72 500 133 ) "dev textures/dev_measurerails01" 0 0 180 0.25 -0.25
+}
+// brush 30
+{
+( -72 508 128 ) ( -72 508 129 ) ( -72 507 128 ) "dev textures/dev_measuregeneric01b" 0 0 180 0.25 -0.25
+( -64 500 132 ) ( -64 500 133 ) ( -63 500 132 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 0.25
+( -72 508 128 ) ( -72 507 128 ) ( -71 508 128 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 -0.25
+( -64 500 168 ) ( -63 500 168 ) ( -64 499 168 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 -0.25
+( -72 508 128 ) ( -71 508 128 ) ( -72 508 129 ) "dev textures/dev_measuregeneric01b" 48 0 0 0.25 0.25
+( -64 500 132 ) ( -64 499 132 ) ( -64 500 133 ) "dev textures/dev_measuregeneric01b" 0 0 180 0.25 -0.25
+}
+// brush 31
+{
+( -768 320 -704 ) ( -768 320 -640 ) ( -768 64 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 64 -704 ) ( -768 64 -640 ) ( -704 64 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 320 -704 ) ( -768 64 -704 ) ( -704 320 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 320 -640 ) ( -704 64 -640 ) ( -768 320 -640 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 320 -704 ) ( -704 320 -640 ) ( -768 320 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 64 -704 ) ( -704 64 -640 ) ( -704 320 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 32
+{
+( -768 -128 -704 ) ( -768 64 -704 ) ( -768 -128 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -128 0 ) ( -704 -128 0 ) ( -768 -128 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 -128 -704 ) ( -704 64 -704 ) ( -768 -128 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -128 0 ) ( -768 64 0 ) ( -704 -128 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 64 0 ) ( -768 64 -704 ) ( -704 64 0 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -704 -128 0 ) ( -704 64 0 ) ( -704 -128 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 33
+{
+( -768 64 0 ) ( -768 64 -544 ) ( -768 138.66666666666663 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 64 0 ) ( -704 64 -544 ) ( -768 64 0 ) __TB_empty 0 0 0 1 1
+( -768 64 0 ) ( -768 138.66666666666663 0 ) ( -704 64 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 138.66666666666663 0 ) ( -768 192 -160 ) ( -704 138.66666666666663 0 ) __TB_empty 0 0 0 1 1
+( -768 64 -544 ) ( -704 64 -544 ) ( -768 192 -160 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -704 138.66666666666663 0 ) ( -704 192 -160 ) ( -704 64 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 34
+{
+( -768 192 -160 ) ( -768 136 -328 ) ( -768 304 -496 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 192 -160 ) ( -704 136 -328 ) ( -768 192 -160 ) __TB_empty 0 0 0 1 1
+( -704 136 -328 ) ( -704 304 -496 ) ( -768 136 -328 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -768 192 -160 ) ( -768 304 -496 ) ( -704 192 -160 ) __TB_empty 0 0 0 1 1
+( -704 192 -160 ) ( -704 304 -496 ) ( -704 136 -328 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 35
+{
+( -768 136 -328 ) ( -768 80 -496 ) ( -768 192 -384 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 136 -328 ) ( -704 80 -496 ) ( -768 136 -328 ) __TB_empty 0 0 0 1 1
+( -704 80 -496 ) ( -704 192 -384 ) ( -768 80 -496 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -768 136 -328 ) ( -768 192 -384 ) ( -704 136 -328 ) __TB_empty 0 0 0 1 -1
+( -704 136 -328 ) ( -704 192 -384 ) ( -704 80 -496 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 36
+{
+( -768 192 -384 ) ( -768 128 -448 ) ( -768 256 -448 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 192 -384 ) ( -704 128 -448 ) ( -768 192 -384 ) __TB_empty 0 0 0 1 1
+( -704 256 -448 ) ( -768 256 -448 ) ( -704 128 -448 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -768 192 -384 ) ( -768 256 -448 ) ( -704 192 -384 ) __TB_empty 0 0 0 1 -1
+( -704 192 -384 ) ( -704 256 -448 ) ( -704 128 -448 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 37
+{
+( -768 256 -448 ) ( -768 224 -448 ) ( -768 272 -464 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 224 -448 ) ( -704 224 -448 ) ( -768 272 -464 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -704 256 -448 ) ( -704 224 -448 ) ( -768 256 -448 ) __TB_empty 0 0 0 1 -1
+( -768 256 -448 ) ( -768 272 -464 ) ( -704 256 -448 ) __TB_empty 0 0 0 1 -1
+( -704 256 -448 ) ( -704 272 -464 ) ( -704 224 -448 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 38
+{
+( -768 128 -448 ) ( -768 112 -464 ) ( -768 160 -448 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 128 -448 ) ( -704 112 -464 ) ( -768 128 -448 ) __TB_empty 0 0 0 1 1
+( -768 128 -448 ) ( -768 160 -448 ) ( -704 128 -448 ) __TB_empty 0 0 0 1 -1
+( -704 112 -464 ) ( -704 160 -448 ) ( -768 112 -464 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -704 128 -448 ) ( -704 160 -448 ) ( -704 112 -464 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 39
+{
+( -768 320 0 ) ( -768 138.66666666666663 0 ) ( -768 320 -544 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 320 -544 ) ( -768 138.66666666666663 0 ) ( -704 320 -544 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -704 320 0 ) ( -704 138.66666666666663 0 ) ( -768 320 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 320 0 ) ( -768 320 -544 ) ( -704 320 0 ) __TB_empty 0 0 0 1 1
+( -704 320 0 ) ( -704 320 -544 ) ( -704 138.66666666666663 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 40
+{
+( -768 512 0 ) ( -768 320 0 ) ( -768 512 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 320 -704 ) ( -768 320 -704 ) ( -704 320 0 ) "dev textures/dev_measuregeneric01" 0 0 0 0.25 0.25
+( -768 512 -704 ) ( -768 320 -704 ) ( -704 512 -704 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 512 0 ) ( -704 320 0 ) ( -768 512 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 512 -704 ) ( -704 512 -704 ) ( -768 512 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -704 512 -704 ) ( -704 320 -704 ) ( -704 512 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 41
+{
+( -704 304 -496 ) ( -704 320 -576 ) ( -704 320 -544 ) "dev textures/dev_measuregeneric01b" 0 0 180 0.25 0.25
+( -688 64 -544 ) ( -704 64 -576 ) ( -704 64 -544 ) __TB_empty 0 0 0 1 1
+( -688 320 -640 ) ( -704 64 -640 ) ( -688 64 -640 ) __TB_empty 0 0 0 1 -1
+( -688 64 -544 ) ( -688 192 -544 ) ( -560 192 -544 ) __TB_empty 0 0 0 1 -1
+( -688 320 -544 ) ( -704 320 -576 ) ( -688 320 -576 ) __TB_empty 0 0 0 1 1
+( -688 320 -544 ) ( -688 272 -464 ) ( -688 304 -496 ) __TB_empty 0 0 180 1 -1
+}
+// brush 42
+{
+( -704 304 -496 ) ( -704 320 -576 ) ( -704 320 -544 ) "dev textures/dev_measuregeneric01b" 0 0 180 0.25 0.25
+( -688 80 -496 ) ( -704 64 -544 ) ( -704 80 -496 ) __TB_empty 0 0 0 1 1
+( -688 112 -464 ) ( -704 80 -496 ) ( -704 112 -464 ) __TB_empty 0 0 0 1 1
+( -704 112 -464 ) ( -688 160 -448 ) ( -688 112 -464 ) __TB_empty 0 0 0 1 1
+( -688 64 -544 ) ( -560 192 -544 ) ( -688 192 -544 ) __TB_empty 0 0 0 1 -1
+( -688 224 -448 ) ( -704 160 -448 ) ( -704 224 -448 ) __TB_empty 0 0 0 1 -1
+( -688 272 -464 ) ( -704 224 -448 ) ( -704 272 -464 ) __TB_empty 0 0 0 1 -1
+( -688 304 -496 ) ( -704 272 -464 ) ( -704 304 -496 ) __TB_empty 0 0 0 1 -1
+( -704 304 -496 ) ( -688 320 -544 ) ( -688 304 -496 ) __TB_empty 0 0 0 1 1
+( -688 320 -544 ) ( -688 272 -464 ) ( -688 304 -496 ) __TB_empty 0 0 180 1 -1
+}
+}
+// entity 1
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "1"
+"_tb_id" "1"
+"_tb_linked_group_id" "f4f71ef6-4968-4679-9496-7a79679bb150"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 124 252 ) ( -752 123 252 ) ( -752 124 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 120 232 ) ( -747 120 232 ) ( -748 120 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 120 232 ) ( -748 119 232 ) ( -747 120 232 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 124 252 ) ( -751 124 252 ) ( -752 123 252 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 124 252 ) ( -752 124 251 ) ( -751 124 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 120 232 ) ( -748 120 231 ) ( -748 119 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 2
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "2"
+"_tb_id" "2"
+"_tb_linked_group_id" "a0b41c42-d6c2-49d3-a1a7-1da7617d87ee"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 140 252 ) ( -752 139 252 ) ( -752 140 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 128 248 ) ( -747 128 248 ) ( -748 128 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 128 248 ) ( -748 127 248 ) ( -747 128 248 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 140 252 ) ( -751 140 252 ) ( -752 139 252 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 140 252 ) ( -752 140 251 ) ( -751 140 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 128 248 ) ( -748 128 247 ) ( -748 127 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 140 248 ) ( -752 139 248 ) ( -752 140 247 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 136 240 ) ( -747 136 240 ) ( -748 136 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 136 240 ) ( -748 135 240 ) ( -747 136 240 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 140 248 ) ( -751 140 248 ) ( -752 139 248 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 140 248 ) ( -752 140 247 ) ( -751 140 248 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 136 240 ) ( -748 136 239 ) ( -748 135 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 136 244 ) ( -752 135 244 ) ( -752 136 243 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 128 240 ) ( -747 128 240 ) ( -748 128 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 128 240 ) ( -748 127 240 ) ( -747 128 240 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 136 244 ) ( -751 136 244 ) ( -752 135 244 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 136 244 ) ( -752 136 243 ) ( -751 136 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 128 240 ) ( -748 128 239 ) ( -748 127 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 132 240 ) ( -752 131 240 ) ( -752 132 239 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 128 232 ) ( -747 128 232 ) ( -748 128 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 128 232 ) ( -748 127 232 ) ( -747 128 232 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 132 240 ) ( -751 132 240 ) ( -752 131 240 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 132 240 ) ( -752 132 239 ) ( -751 132 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 128 232 ) ( -748 128 231 ) ( -748 127 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 4
+{
+( -752 140 236 ) ( -752 139 236 ) ( -752 140 235 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 132 232 ) ( -747 132 232 ) ( -748 132 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 132 232 ) ( -748 131 232 ) ( -747 132 232 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 140 236 ) ( -751 140 236 ) ( -752 139 236 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 140 236 ) ( -752 140 235 ) ( -751 140 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 132 232 ) ( -748 132 231 ) ( -748 131 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 3
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "3"
+"_tb_id" "3"
+"_tb_linked_group_id" "f5390981-c648-4e4a-85df-c09b2e147e07"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 152 252 ) ( -752 151 252 ) ( -752 152 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 144 248 ) ( -747 144 248 ) ( -748 144 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 144 248 ) ( -748 143 248 ) ( -747 144 248 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 152 252 ) ( -751 152 252 ) ( -752 151 252 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 152 252 ) ( -752 152 251 ) ( -751 152 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 144 248 ) ( -748 144 247 ) ( -748 143 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 156 252 ) ( -752 155 252 ) ( -752 156 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 152 232 ) ( -747 152 232 ) ( -748 152 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 152 232 ) ( -748 151 232 ) ( -747 152 232 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 156 252 ) ( -751 156 252 ) ( -752 155 252 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 156 252 ) ( -752 156 251 ) ( -751 156 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 152 232 ) ( -748 152 231 ) ( -748 151 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 152 244 ) ( -752 151 244 ) ( -752 152 243 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 144 240 ) ( -747 144 240 ) ( -748 144 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 144 240 ) ( -748 143 240 ) ( -747 144 240 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 152 244 ) ( -751 152 244 ) ( -752 151 244 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 152 244 ) ( -752 152 243 ) ( -751 152 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 144 240 ) ( -748 144 239 ) ( -748 143 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 152 236 ) ( -752 151 236 ) ( -752 152 235 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 144 232 ) ( -747 144 232 ) ( -748 144 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 144 232 ) ( -748 143 232 ) ( -747 144 232 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 152 236 ) ( -751 152 236 ) ( -752 151 236 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 152 236 ) ( -752 152 235 ) ( -751 152 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 144 232 ) ( -748 144 231 ) ( -748 143 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 4
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "4"
+"_tb_id" "4"
+"_tb_linked_group_id" "fe9b1ff5-c7ef-49b5-abfd-0ac50463eeaf"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 164 252 ) ( -752 163 252 ) ( -752 164 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 160 240 ) ( -747 160 240 ) ( -748 160 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 160 240 ) ( -748 159 240 ) ( -747 160 240 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 164 252 ) ( -751 164 252 ) ( -752 163 252 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 164 252 ) ( -752 164 251 ) ( -751 164 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 160 240 ) ( -748 160 239 ) ( -748 159 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 172 244 ) ( -752 171 244 ) ( -752 172 243 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 164 240 ) ( -747 164 240 ) ( -748 164 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 164 240 ) ( -748 163 240 ) ( -747 164 240 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 172 244 ) ( -751 172 244 ) ( -752 171 244 ) "dev textures/dev_normal" -256.00003 272 270 1 1
+( -752 172 244 ) ( -752 172 243 ) ( -751 172 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 164 240 ) ( -748 164 239 ) ( -748 163 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 172 252 ) ( -752 171 252 ) ( -752 172 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 168 244 ) ( -747 168 244 ) ( -748 168 243 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 168 244 ) ( -748 167 244 ) ( -747 168 244 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 172 252 ) ( -751 172 252 ) ( -752 171 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 172 252 ) ( -752 172 251 ) ( -751 172 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 168 244 ) ( -748 168 243 ) ( -748 167 244 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 172 240 ) ( -752 171 240 ) ( -752 172 239 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 168 232 ) ( -747 168 232 ) ( -748 168 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 168 232 ) ( -748 167 232 ) ( -747 168 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 172 240 ) ( -751 172 240 ) ( -752 171 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 172 240 ) ( -752 172 239 ) ( -751 172 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 168 232 ) ( -748 168 231 ) ( -748 167 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 5
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "5"
+"_tb_id" "5"
+"_tb_linked_group_id" "495bea90-d019-481b-abc6-8bb78eaf6319"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 188 252 ) ( -752 187 252 ) ( -752 188 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 176 248 ) ( -747 176 248 ) ( -748 176 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 176 248 ) ( -748 175 248 ) ( -747 176 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 188 252 ) ( -751 188 252 ) ( -752 187 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 188 252 ) ( -752 188 251 ) ( -751 188 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 176 248 ) ( -748 176 247 ) ( -748 175 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 180 248 ) ( -752 179 248 ) ( -752 180 247 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 176 240 ) ( -747 176 240 ) ( -748 176 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 176 240 ) ( -748 175 240 ) ( -747 176 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 180 248 ) ( -751 180 248 ) ( -752 179 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 180 248 ) ( -752 180 247 ) ( -751 180 248 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 176 240 ) ( -748 176 239 ) ( -748 175 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 188 244 ) ( -752 187 244 ) ( -752 188 243 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 180 240 ) ( -747 180 240 ) ( -748 180 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 180 240 ) ( -748 179 240 ) ( -747 180 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 188 244 ) ( -751 188 244 ) ( -752 187 244 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 188 244 ) ( -752 188 243 ) ( -751 188 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 180 240 ) ( -748 180 239 ) ( -748 179 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 188 240 ) ( -752 187 240 ) ( -752 188 239 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 184 232 ) ( -747 184 232 ) ( -748 184 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 184 232 ) ( -748 183 232 ) ( -747 184 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 188 240 ) ( -751 188 240 ) ( -752 187 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 188 240 ) ( -752 188 239 ) ( -751 188 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 184 232 ) ( -748 184 231 ) ( -748 183 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 4
+{
+( -752 184 236 ) ( -752 183 236 ) ( -752 184 235 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 176 232 ) ( -747 176 232 ) ( -748 176 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 176 232 ) ( -748 175 232 ) ( -747 176 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 184 236 ) ( -751 184 236 ) ( -752 183 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 184 236 ) ( -752 184 235 ) ( -751 184 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 176 232 ) ( -748 176 231 ) ( -748 175 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 6
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "6"
+"_tb_id" "6"
+"_tb_linked_group_id" "06212580-520d-4bf3-832e-5ef615d66a90"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 204 252 ) ( -752 203 252 ) ( -752 204 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 196 248 ) ( -747 196 248 ) ( -748 196 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 196 248 ) ( -748 195 248 ) ( -747 196 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 204 252 ) ( -751 204 252 ) ( -752 203 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 204 252 ) ( -752 204 251 ) ( -751 204 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 196 248 ) ( -748 196 247 ) ( -748 195 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 196 252 ) ( -752 195 252 ) ( -752 196 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 192 236 ) ( -747 192 236 ) ( -748 192 235 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 192 236 ) ( -748 191 236 ) ( -747 192 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 196 252 ) ( -751 196 252 ) ( -752 195 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 196 252 ) ( -752 196 251 ) ( -751 196 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 192 236 ) ( -748 192 235 ) ( -748 191 236 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 204 244 ) ( -752 203 244 ) ( -752 204 243 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 196 240 ) ( -747 196 240 ) ( -748 196 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 196 240 ) ( -748 195 240 ) ( -747 196 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 204 244 ) ( -751 204 244 ) ( -752 203 244 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 204 244 ) ( -752 204 243 ) ( -751 204 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 196 240 ) ( -748 196 239 ) ( -748 195 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 204 240 ) ( -752 203 240 ) ( -752 204 239 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 200 232 ) ( -747 200 232 ) ( -748 200 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 200 232 ) ( -748 199 232 ) ( -747 200 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 204 240 ) ( -751 204 240 ) ( -752 203 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 204 240 ) ( -752 204 239 ) ( -751 204 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 200 232 ) ( -748 200 231 ) ( -748 199 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 4
+{
+( -752 200 236 ) ( -752 199 236 ) ( -752 200 235 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 192 232 ) ( -747 192 232 ) ( -748 192 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 192 232 ) ( -748 191 232 ) ( -747 192 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 200 236 ) ( -751 200 236 ) ( -752 199 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 200 236 ) ( -752 200 235 ) ( -751 200 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 192 232 ) ( -748 192 231 ) ( -748 191 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 7
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "7"
+"_tb_id" "7"
+"_tb_linked_group_id" "63d26a1d-525d-4727-b7a7-92fc74fc7606"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 220 252 ) ( -752 219 252 ) ( -752 220 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 208 248 ) ( -747 208 248 ) ( -748 208 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 208 248 ) ( -748 207 248 ) ( -747 208 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 220 252 ) ( -751 220 252 ) ( -752 219 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 220 252 ) ( -752 220 251 ) ( -751 220 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 208 248 ) ( -748 208 247 ) ( -748 207 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 220 248 ) ( -752 219 248 ) ( -752 220 247 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 216 232 ) ( -747 216 232 ) ( -748 216 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 216 232 ) ( -748 215 232 ) ( -747 216 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 220 248 ) ( -751 220 248 ) ( -752 219 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 220 248 ) ( -752 220 247 ) ( -751 220 248 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 216 232 ) ( -748 216 231 ) ( -748 215 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 8
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "8"
+"_tb_id" "8"
+"_tb_linked_group_id" "dbb0e054-3613-4591-b969-4728defb192e"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 236 252 ) ( -752 235 252 ) ( -752 236 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 224 248 ) ( -747 224 248 ) ( -748 224 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 224 248 ) ( -748 223 248 ) ( -747 224 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 252 ) ( -751 236 252 ) ( -752 235 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 252 ) ( -752 236 251 ) ( -751 236 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 224 248 ) ( -748 224 247 ) ( -748 223 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 228 248 ) ( -752 227 248 ) ( -752 228 247 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 224 240 ) ( -747 224 240 ) ( -748 224 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 224 240 ) ( -748 223 240 ) ( -747 224 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 228 248 ) ( -751 228 248 ) ( -752 227 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 228 248 ) ( -752 228 247 ) ( -751 228 248 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 224 240 ) ( -748 224 239 ) ( -748 223 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 232 244 ) ( -752 231 244 ) ( -752 232 243 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 228 236 ) ( -747 228 236 ) ( -748 228 235 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 228 240 ) ( -748 227 240 ) ( -747 228 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 232 244 ) ( -751 232 244 ) ( -752 231 244 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 232 244 ) ( -752 232 243 ) ( -751 232 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 228 236 ) ( -748 228 235 ) ( -748 227 236 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 236 248 ) ( -752 235 248 ) ( -752 236 247 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 232 240 ) ( -747 232 240 ) ( -748 232 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 232 240 ) ( -748 231 240 ) ( -747 232 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 248 ) ( -751 236 248 ) ( -752 235 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 248 ) ( -752 236 247 ) ( -751 236 248 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 232 240 ) ( -748 232 239 ) ( -748 231 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 4
+{
+( -752 236 240 ) ( -752 235 240 ) ( -752 236 239 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 232 236 ) ( -747 232 236 ) ( -748 232 235 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 232 236 ) ( -748 231 236 ) ( -747 232 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 240 ) ( -751 236 240 ) ( -752 235 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 240 ) ( -752 236 239 ) ( -751 236 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 232 236 ) ( -748 232 235 ) ( -748 231 236 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 5
+{
+( -752 236 236 ) ( -752 235 236 ) ( -752 236 235 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 228 232 ) ( -747 228 232 ) ( -748 228 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 228 232 ) ( -748 227 232 ) ( -747 228 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 236 ) ( -751 236 236 ) ( -752 235 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 236 236 ) ( -752 236 235 ) ( -751 236 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 228 232 ) ( -748 228 231 ) ( -748 227 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 6
+{
+( -752 228 240 ) ( -752 227 240 ) ( -752 228 239 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 224 232 ) ( -747 224 232 ) ( -748 224 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 224 232 ) ( -748 223 232 ) ( -747 224 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 228 240 ) ( -751 228 240 ) ( -752 227 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 228 240 ) ( -752 228 239 ) ( -751 228 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 224 232 ) ( -748 224 231 ) ( -748 223 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 9
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "9"
+"_tb_id" "9"
+"_tb_linked_group_id" "8458deba-d82f-43ad-bb00-5cdd2db919ce"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 248 252 ) ( -752 247 252 ) ( -752 248 251 ) "dev textures/dev_normal" -255.99997 -316 180 1 1
+( -748 244 248 ) ( -747 244 248 ) ( -748 244 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 244 248 ) ( -748 243 248 ) ( -747 244 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 248 252 ) ( -751 248 252 ) ( -752 247 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 248 252 ) ( -752 248 251 ) ( -751 248 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 244 248 ) ( -748 244 247 ) ( -748 243 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 244 252 ) ( -752 243 252 ) ( -752 244 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 240 240 ) ( -747 240 240 ) ( -748 240 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 240 240 ) ( -748 239 240 ) ( -747 240 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 244 252 ) ( -751 244 252 ) ( -752 243 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 244 252 ) ( -752 244 251 ) ( -751 244 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 240 240 ) ( -748 240 239 ) ( -748 239 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 252 244 ) ( -752 251 244 ) ( -752 252 243 ) "dev textures/dev_normal" -255.99997 -316 180 1 1
+( -748 244 240 ) ( -747 244 240 ) ( -748 244 239 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 244 240 ) ( -748 243 240 ) ( -747 244 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 252 244 ) ( -751 252 244 ) ( -752 251 244 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 252 244 ) ( -752 252 243 ) ( -751 252 244 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 244 240 ) ( -748 244 239 ) ( -748 243 240 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 252 252 ) ( -752 251 252 ) ( -752 252 251 ) "dev textures/dev_normal" -255.99997 -316 180 1 1
+( -748 248 244 ) ( -747 248 244 ) ( -748 248 243 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 248 244 ) ( -748 247 244 ) ( -747 248 244 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 252 252 ) ( -751 252 252 ) ( -752 251 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 252 252 ) ( -752 252 251 ) ( -751 252 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 248 244 ) ( -748 248 243 ) ( -748 247 244 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 4
+{
+( -752 252 240 ) ( -752 251 240 ) ( -752 252 239 ) "dev textures/dev_normal" -255.99997 -316 180 1 1
+( -748 248 232 ) ( -747 248 232 ) ( -748 248 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 248 232 ) ( -748 247 232 ) ( -747 248 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 252 240 ) ( -751 252 240 ) ( -752 251 240 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 252 240 ) ( -752 252 239 ) ( -751 252 240 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 248 232 ) ( -748 248 231 ) ( -748 247 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 5
+{
+( -752 248 236 ) ( -752 247 236 ) ( -752 248 235 ) "dev textures/dev_normal" -255.99997 -316 180 1 1
+( -748 240 232 ) ( -747 240 232 ) ( -748 240 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 240 232 ) ( -748 239 232 ) ( -747 240 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 248 236 ) ( -751 248 236 ) ( -752 247 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 248 236 ) ( -752 248 235 ) ( -751 248 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 240 232 ) ( -748 240 231 ) ( -748 239 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 10
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "0"
+"_tb_id" "10"
+"_tb_linked_group_id" "27d24ce2-e889-4c07-b255-0e416de48440"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -256 0 -1 -1.8369701987210297e-16 316 0 0 0 1"
+// brush 0
+{
+( -752 260 252 ) ( -752 259 252 ) ( -752 260 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 256 232 ) ( -747 256 232 ) ( -748 256 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 256 232 ) ( -748 255 232 ) ( -747 256 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 260 252 ) ( -751 260 252 ) ( -752 259 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 260 252 ) ( -752 260 251 ) ( -751 260 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 256 232 ) ( -748 256 231 ) ( -748 255 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 1
+{
+( -752 268 252 ) ( -752 267 252 ) ( -752 268 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 264 236 ) ( -747 264 236 ) ( -748 264 235 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 264 236 ) ( -748 263 236 ) ( -747 264 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 268 252 ) ( -751 268 252 ) ( -752 267 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 268 252 ) ( -752 268 251 ) ( -751 268 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 264 236 ) ( -748 264 235 ) ( -748 263 236 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 2
+{
+( -752 264 252 ) ( -752 263 252 ) ( -752 264 251 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 260 248 ) ( -747 260 248 ) ( -748 260 247 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 260 248 ) ( -748 259 248 ) ( -747 260 248 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 264 252 ) ( -751 264 252 ) ( -752 263 252 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 264 252 ) ( -752 264 251 ) ( -751 264 252 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 260 248 ) ( -748 260 247 ) ( -748 259 248 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+// brush 3
+{
+( -752 268 236 ) ( -752 267 236 ) ( -752 268 235 ) "dev textures/dev_normal" -256 -316 180 1 1
+( -748 260 232 ) ( -747 260 232 ) ( -748 260 231 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 260 232 ) ( -748 259 232 ) ( -747 260 232 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 268 236 ) ( -751 268 236 ) ( -752 267 236 ) "dev textures/dev_normal" -256 272 270 1 1
+( -752 268 236 ) ( -752 268 235 ) ( -751 268 236 ) "dev textures/dev_normal" 316 272 270 1 1
+( -748 260 232 ) ( -748 260 231 ) ( -748 259 232 ) "dev textures/dev_normal" -256 -316 180 1 1
+}
+}
+// entity 11
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "4"
+"_tb_id" "11"
+"_tb_linked_group_id" "4494ed94-4105-4d4d-a0e5-440aed108714"
+"_tb_transformation" "-1.0718754395722282e-15 -1.8369701987210297e-16 1 -752.0000000000005 -1 1.969003239235187e-31 -1.0718754395722282e-15 -336 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 84 200 ) ( -752 83 200 ) ( -752 84 199 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 80 188 ) ( -747 80 188 ) ( -748 80 187 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 80 188 ) ( -748 79 188 ) ( -747 80 188 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 84 200 ) ( -751 84 200 ) ( -752 83 200 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 84 200 ) ( -752 84 199 ) ( -751 84 200 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 80 188 ) ( -748 80 187 ) ( -748 79 188 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 1
+{
+( -752 92 192 ) ( -752 91 192 ) ( -752 92 191 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 84 188 ) ( -747 84 188 ) ( -748 84 187 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 84 188 ) ( -748 83 188 ) ( -747 84 188 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 92 192 ) ( -751 92 192 ) ( -752 91 192 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 92 192 ) ( -752 92 191 ) ( -751 92 192 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 84 188 ) ( -748 84 187 ) ( -748 83 188 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 2
+{
+( -752 92 200 ) ( -752 91 200 ) ( -752 92 199 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 88 192 ) ( -747 88 192 ) ( -748 88 191 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 88 192 ) ( -748 87 192 ) ( -747 88 192 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 92 200 ) ( -751 92 200 ) ( -752 91 200 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 92 200 ) ( -752 92 199 ) ( -751 92 200 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 88 192 ) ( -748 88 191 ) ( -748 87 192 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 3
+{
+( -752 92 188 ) ( -752 91 188 ) ( -752 92 187 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 88 180 ) ( -747 88 180 ) ( -748 88 179 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 88 180 ) ( -748 87 180 ) ( -747 88 180 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 92 188 ) ( -751 92 188 ) ( -752 91 188 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 92 188 ) ( -752 92 187 ) ( -751 92 188 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 88 180 ) ( -748 88 179 ) ( -748 87 180 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+}
+// entity 12
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "5"
+"_tb_id" "12"
+"_tb_linked_group_id" "2357a8d1-b28e-4602-8468-12f3e1d55a3c"
+"_tb_transformation" "-1.0718754395722282e-15 -1.8369701987210297e-16 1 -752.0000000000005 -1 1.969003239235187e-31 -1.0718754395722282e-15 -336 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 108 200 ) ( -752 107 200 ) ( -752 108 199 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 96 196 ) ( -747 96 196 ) ( -748 96 195 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 96 196 ) ( -748 95 196 ) ( -747 96 196 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 108 200 ) ( -751 108 200 ) ( -752 107 200 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 108 200 ) ( -752 108 199 ) ( -751 108 200 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 96 196 ) ( -748 96 195 ) ( -748 95 196 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 1
+{
+( -752 100 196 ) ( -752 99 196 ) ( -752 100 195 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 96 188 ) ( -747 96 188 ) ( -748 96 187 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 96 188 ) ( -748 95 188 ) ( -747 96 188 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 100 196 ) ( -751 100 196 ) ( -752 99 196 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 100 196 ) ( -752 100 195 ) ( -751 100 196 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 96 188 ) ( -748 96 187 ) ( -748 95 188 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 2
+{
+( -752 108 192 ) ( -752 107 192 ) ( -752 108 191 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 100 188 ) ( -747 100 188 ) ( -748 100 187 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 100 188 ) ( -748 99 188 ) ( -747 100 188 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 108 192 ) ( -751 108 192 ) ( -752 107 192 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 108 192 ) ( -752 108 191 ) ( -751 108 192 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 100 188 ) ( -748 100 187 ) ( -748 99 188 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 3
+{
+( -752 108 188 ) ( -752 107 188 ) ( -752 108 187 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 104 180 ) ( -747 104 180 ) ( -748 104 179 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 104 180 ) ( -748 103 180 ) ( -747 104 180 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 108 188 ) ( -751 108 188 ) ( -752 107 188 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 108 188 ) ( -752 108 187 ) ( -751 108 188 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 104 180 ) ( -748 104 179 ) ( -748 103 180 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+// brush 4
+{
+( -752 104 184 ) ( -752 103 184 ) ( -752 104 183 ) "dev textures/dev_normal" 176 -264 180 1 1
+( -748 96 180 ) ( -747 96 180 ) ( -748 96 179 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 96 180 ) ( -748 95 180 ) ( -747 96 180 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 104 184 ) ( -751 104 184 ) ( -752 103 184 ) "dev textures/dev_normal" 176 -240 270 1 1
+( -752 104 184 ) ( -752 104 183 ) ( -751 104 184 ) "dev textures/dev_normal" 264 -240 270 1 1
+( -748 96 180 ) ( -748 96 179 ) ( -748 95 180 ) "dev textures/dev_normal" 176 -264 180 1 1
+}
+}
+// entity 13
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "3"
+"_tb_id" "13"
+"_tb_linked_group_id" "901823c5-6196-49f0-9e27-bed97f7e84a8"
+"_tb_transformation" "-1.9600538592723536e-15 -1.8369701987210297e-16 1 -752 -1 3.6005605273714567e-31 -1.9600538592723536e-15 -384 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 24 200 ) ( -752 23 200 ) ( -752 24 199 ) "dev textures/dev_normal" -384 -264 180 1 1
+( -748 16 196 ) ( -747 16 196 ) ( -748 16 195 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 16 196 ) ( -748 15 196 ) ( -747 16 196 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 24 200 ) ( -751 24 200 ) ( -752 23 200 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 24 200 ) ( -752 24 199 ) ( -751 24 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 16 196 ) ( -748 16 195 ) ( -748 15 196 ) "dev textures/dev_normal" -384 -264 180 1 1
+}
+// brush 1
+{
+( -752 28 200 ) ( -752 27 200 ) ( -752 28 199 ) "dev textures/dev_normal" -384 -264 180 1 1
+( -748 24 180 ) ( -747 24 180 ) ( -748 24 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 24 180 ) ( -748 23 180 ) ( -747 24 180 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 28 200 ) ( -751 28 200 ) ( -752 27 200 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 28 200 ) ( -752 28 199 ) ( -751 28 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 24 180 ) ( -748 24 179 ) ( -748 23 180 ) "dev textures/dev_normal" -384 -264 180 1 1
+}
+// brush 2
+{
+( -752 24 192 ) ( -752 23 192 ) ( -752 24 191 ) "dev textures/dev_normal" -384 -264 180 1 1
+( -748 16 188 ) ( -747 16 188 ) ( -748 16 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 16 188 ) ( -748 15 188 ) ( -747 16 188 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 24 192 ) ( -751 24 192 ) ( -752 23 192 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 24 192 ) ( -752 24 191 ) ( -751 24 192 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 16 188 ) ( -748 16 187 ) ( -748 15 188 ) "dev textures/dev_normal" -384 -264 180 1 1
+}
+// brush 3
+{
+( -752 24 184 ) ( -752 23 184 ) ( -752 24 183 ) "dev textures/dev_normal" -384 -264 180 1 1
+( -748 16 180 ) ( -747 16 180 ) ( -748 16 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 16 180 ) ( -748 15 180 ) ( -747 16 180 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 24 184 ) ( -751 24 184 ) ( -752 23 184 ) "dev textures/dev_normal" -384 272 270 1 1
+( -752 24 184 ) ( -752 24 183 ) ( -751 24 184 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 16 180 ) ( -748 16 179 ) ( -748 15 180 ) "dev textures/dev_normal" -384 -264 180 1 1
+}
+}
+// entity 14
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "9"
+"_tb_id" "14"
+"_tb_linked_group_id" "638ffe8f-69c0-4063-a091-ea581b15e933"
+"_tb_transformation" "-1.9600538592723536e-15 -1.8369701987210297e-16 1 -752 -1 3.6005605273714567e-31 -1.9600538592723536e-15 -464 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 40 200 ) ( -752 39 200 ) ( -752 40 199 ) "dev textures/dev_normal" -464 -264 180 1 1
+( -748 36 196 ) ( -747 36 196 ) ( -748 36 195 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 36 196 ) ( -748 35 196 ) ( -747 36 196 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 40 200 ) ( -751 40 200 ) ( -752 39 200 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 40 200 ) ( -752 40 199 ) ( -751 40 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 36 196 ) ( -748 36 195 ) ( -748 35 196 ) "dev textures/dev_normal" -464 -264 180 1 1
+}
+// brush 1
+{
+( -752 36 200 ) ( -752 35 200 ) ( -752 36 199 ) "dev textures/dev_normal" -464 -264 180 1 1
+( -748 32 188 ) ( -747 32 188 ) ( -748 32 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 32 188 ) ( -748 31 188 ) ( -747 32 188 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 36 200 ) ( -751 36 200 ) ( -752 35 200 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 36 200 ) ( -752 36 199 ) ( -751 36 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 32 188 ) ( -748 32 187 ) ( -748 31 188 ) "dev textures/dev_normal" -464 -264 180 1 1
+}
+// brush 2
+{
+( -752 44 192 ) ( -752 43 192 ) ( -752 44 191 ) "dev textures/dev_normal" -464 -264 180 1 1
+( -748 36 188 ) ( -747 36 188 ) ( -748 36 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 36 188 ) ( -748 35 188 ) ( -747 36 188 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 44 192 ) ( -751 44 192 ) ( -752 43 192 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 44 192 ) ( -752 44 191 ) ( -751 44 192 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 36 188 ) ( -748 36 187 ) ( -748 35 188 ) "dev textures/dev_normal" -464 -264 180 1 1
+}
+// brush 3
+{
+( -752 44 200 ) ( -752 43 200 ) ( -752 44 199 ) "dev textures/dev_normal" -464 -264 180 1 1
+( -748 40 192 ) ( -747 40 192 ) ( -748 40 191 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 40 192 ) ( -748 39 192 ) ( -747 40 192 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 44 200 ) ( -751 44 200 ) ( -752 43 200 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 44 200 ) ( -752 44 199 ) ( -751 44 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 40 192 ) ( -748 40 191 ) ( -748 39 192 ) "dev textures/dev_normal" -464 -264 180 1 1
+}
+// brush 4
+{
+( -752 44 188 ) ( -752 43 188 ) ( -752 44 187 ) "dev textures/dev_normal" -464 -264 180 1 1
+( -748 40 180 ) ( -747 40 180 ) ( -748 40 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 40 180 ) ( -748 39 180 ) ( -747 40 180 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 44 188 ) ( -751 44 188 ) ( -752 43 188 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 44 188 ) ( -752 44 187 ) ( -751 44 188 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 40 180 ) ( -748 40 179 ) ( -748 39 180 ) "dev textures/dev_normal" -464 -264 180 1 1
+}
+// brush 5
+{
+( -752 40 184 ) ( -752 39 184 ) ( -752 40 183 ) "dev textures/dev_normal" -464 -264 180 1 1
+( -748 32 180 ) ( -747 32 180 ) ( -748 32 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 32 180 ) ( -748 31 180 ) ( -747 32 180 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 40 184 ) ( -751 40 184 ) ( -752 39 184 ) "dev textures/dev_normal" -464 272 270 1 1
+( -752 40 184 ) ( -752 40 183 ) ( -751 40 184 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 32 180 ) ( -748 32 179 ) ( -748 31 180 ) "dev textures/dev_normal" -464 -264 180 1 1
+}
+}
+// entity 15
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "3"
+"_tb_id" "15"
+"_tb_linked_group_id" "8cb7b168-8993-4370-a8a5-570dab8655a8"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -448 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 -40 200 ) ( -752 -41 200 ) ( -752 -40 199 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -48 196 ) ( -747 -48 196 ) ( -748 -48 195 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -48 196 ) ( -748 -49 196 ) ( -747 -48 196 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -40 200 ) ( -751 -40 200 ) ( -752 -41 200 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -40 200 ) ( -752 -40 199 ) ( -751 -40 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -48 196 ) ( -748 -48 195 ) ( -748 -49 196 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+// brush 1
+{
+( -752 -36 200 ) ( -752 -37 200 ) ( -752 -36 199 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -40 180 ) ( -747 -40 180 ) ( -748 -40 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -40 180 ) ( -748 -41 180 ) ( -747 -40 180 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -36 200 ) ( -751 -36 200 ) ( -752 -37 200 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -36 200 ) ( -752 -36 199 ) ( -751 -36 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -40 180 ) ( -748 -40 179 ) ( -748 -41 180 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+// brush 2
+{
+( -752 -40 192 ) ( -752 -41 192 ) ( -752 -40 191 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -48 188 ) ( -747 -48 188 ) ( -748 -48 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -48 188 ) ( -748 -49 188 ) ( -747 -48 188 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -40 192 ) ( -751 -40 192 ) ( -752 -41 192 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -40 192 ) ( -752 -40 191 ) ( -751 -40 192 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -48 188 ) ( -748 -48 187 ) ( -748 -49 188 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+// brush 3
+{
+( -752 -40 184 ) ( -752 -41 184 ) ( -752 -40 183 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -48 180 ) ( -747 -48 180 ) ( -748 -48 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -48 180 ) ( -748 -49 180 ) ( -747 -48 180 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -40 184 ) ( -751 -40 184 ) ( -752 -41 184 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -40 184 ) ( -752 -40 183 ) ( -751 -40 184 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -48 180 ) ( -748 -48 179 ) ( -748 -49 180 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+}
+// entity 16
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "4"
+"_tb_id" "16"
+"_tb_linked_group_id" "540a065c-1b3e-4916-998a-13b54e820f48"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -448 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 -28 200 ) ( -752 -29 200 ) ( -752 -28 199 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -32 188 ) ( -747 -32 188 ) ( -748 -32 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -32 188 ) ( -748 -33 188 ) ( -747 -32 188 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -28 200 ) ( -751 -28 200 ) ( -752 -29 200 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -28 200 ) ( -752 -28 199 ) ( -751 -28 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -32 188 ) ( -748 -32 187 ) ( -748 -33 188 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+// brush 1
+{
+( -752 -20 192 ) ( -752 -21 192 ) ( -752 -20 191 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -28 188 ) ( -747 -28 188 ) ( -748 -28 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -28 188 ) ( -748 -29 188 ) ( -747 -28 188 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -20 192 ) ( -751 -20 192 ) ( -752 -21 192 ) "dev textures/dev_normal" -448.00003 272 270 1 1
+( -752 -20 192 ) ( -752 -20 191 ) ( -751 -20 192 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -28 188 ) ( -748 -28 187 ) ( -748 -29 188 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+// brush 2
+{
+( -752 -20 200 ) ( -752 -21 200 ) ( -752 -20 199 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -24 192 ) ( -747 -24 192 ) ( -748 -24 191 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -24 192 ) ( -748 -25 192 ) ( -747 -24 192 ) "dev textures/dev_normal" -448 272 270 1 1
+( -752 -20 200 ) ( -751 -20 200 ) ( -752 -21 200 ) "dev textures/dev_normal" -448 272 270 1 1
+( -752 -20 200 ) ( -752 -20 199 ) ( -751 -20 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -24 192 ) ( -748 -24 191 ) ( -748 -25 192 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+// brush 3
+{
+( -752 -20 188 ) ( -752 -21 188 ) ( -752 -20 187 ) "dev textures/dev_normal" -448 -264 180 1 1
+( -748 -24 180 ) ( -747 -24 180 ) ( -748 -24 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -24 180 ) ( -748 -25 180 ) ( -747 -24 180 ) "dev textures/dev_normal" -448 272 270 1 1
+( -752 -20 188 ) ( -751 -20 188 ) ( -752 -21 188 ) "dev textures/dev_normal" -448 272 270 1 1
+( -752 -20 188 ) ( -752 -20 187 ) ( -751 -20 188 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 -24 180 ) ( -748 -24 179 ) ( -748 -25 180 ) "dev textures/dev_normal" -448 -264 180 1 1
+}
+}
+// entity 17
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "5"
+"_tb_id" "17"
+"_tb_linked_group_id" "4f446772-72e1-4bb9-97fa-eae4fec77286"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -284 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 160 200 ) ( -752 159 200 ) ( -752 160 199 ) "dev textures/dev_normal" -284 -264 180 1 1
+( -748 148 196 ) ( -747 148 196 ) ( -748 148 195 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 148 196 ) ( -748 147 196 ) ( -747 148 196 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 160 200 ) ( -751 160 200 ) ( -752 159 200 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 160 200 ) ( -752 160 199 ) ( -751 160 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 148 196 ) ( -748 148 195 ) ( -748 147 196 ) "dev textures/dev_normal" -284 -264 180 1 1
+}
+// brush 1
+{
+( -752 152 196 ) ( -752 151 196 ) ( -752 152 195 ) "dev textures/dev_normal" -284 -264 180 1 1
+( -748 148 188 ) ( -747 148 188 ) ( -748 148 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 148 188 ) ( -748 147 188 ) ( -747 148 188 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 152 196 ) ( -751 152 196 ) ( -752 151 196 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 152 196 ) ( -752 152 195 ) ( -751 152 196 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 148 188 ) ( -748 148 187 ) ( -748 147 188 ) "dev textures/dev_normal" -284 -264 180 1 1
+}
+// brush 2
+{
+( -752 160 192 ) ( -752 159 192 ) ( -752 160 191 ) "dev textures/dev_normal" -284 -264 180 1 1
+( -748 152 188 ) ( -747 152 188 ) ( -748 152 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 152 188 ) ( -748 151 188 ) ( -747 152 188 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 160 192 ) ( -751 160 192 ) ( -752 159 192 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 160 192 ) ( -752 160 191 ) ( -751 160 192 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 152 188 ) ( -748 152 187 ) ( -748 151 188 ) "dev textures/dev_normal" -284 -264 180 1 1
+}
+// brush 3
+{
+( -752 160 188 ) ( -752 159 188 ) ( -752 160 187 ) "dev textures/dev_normal" -284 -264 180 1 1
+( -748 156 180 ) ( -747 156 180 ) ( -748 156 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 156 180 ) ( -748 155 180 ) ( -747 156 180 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 160 188 ) ( -751 160 188 ) ( -752 159 188 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 160 188 ) ( -752 160 187 ) ( -751 160 188 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 156 180 ) ( -748 156 179 ) ( -748 155 180 ) "dev textures/dev_normal" -284 -264 180 1 1
+}
+// brush 4
+{
+( -752 156 184 ) ( -752 155 184 ) ( -752 156 183 ) "dev textures/dev_normal" -284 -264 180 1 1
+( -748 148 180 ) ( -747 148 180 ) ( -748 148 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 148 180 ) ( -748 147 180 ) ( -747 148 180 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 156 184 ) ( -751 156 184 ) ( -752 155 184 ) "dev textures/dev_normal" -284 272 270 1 1
+( -752 156 184 ) ( -752 156 183 ) ( -751 156 184 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 148 180 ) ( -748 148 179 ) ( -748 147 180 ) "dev textures/dev_normal" -284 -264 180 1 1
+}
+}
+// entity 18
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "3"
+"_tb_id" "18"
+"_tb_linked_group_id" "a832b853-17e8-4170-84dd-18a9f49ce46c"
+"_tb_transformation" "-3.608224830031759e-16 -1.83697019872103e-16 1 -752 -1 6.162975822039155e-32 -3.608224830031759e-16 -236 0 -1 -1.8369701987210297e-16 264 0 0 0 1"
+// brush 0
+{
+( -752 172 200 ) ( -752 171 200 ) ( -752 172 199 ) "dev textures/dev_normal" -236 -264 180 1 1
+( -748 164 196 ) ( -747 164 196 ) ( -748 164 195 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 164 196 ) ( -748 163 196 ) ( -747 164 196 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 172 200 ) ( -751 172 200 ) ( -752 171 200 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 172 200 ) ( -752 172 199 ) ( -751 172 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 164 196 ) ( -748 164 195 ) ( -748 163 196 ) "dev textures/dev_normal" -236 -264 180 1 1
+}
+// brush 1
+{
+( -752 176 200 ) ( -752 175 200 ) ( -752 176 199 ) "dev textures/dev_normal" -236 -264 180 1 1
+( -748 172 180 ) ( -747 172 180 ) ( -748 172 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 172 180 ) ( -748 171 180 ) ( -747 172 180 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 176 200 ) ( -751 176 200 ) ( -752 175 200 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 176 200 ) ( -752 176 199 ) ( -751 176 200 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 172 180 ) ( -748 172 179 ) ( -748 171 180 ) "dev textures/dev_normal" -236 -264 180 1 1
+}
+// brush 2
+{
+( -752 172 192 ) ( -752 171 192 ) ( -752 172 191 ) "dev textures/dev_normal" -236 -264 180 1 1
+( -748 164 188 ) ( -747 164 188 ) ( -748 164 187 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 164 188 ) ( -748 163 188 ) ( -747 164 188 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 172 192 ) ( -751 172 192 ) ( -752 171 192 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 172 192 ) ( -752 172 191 ) ( -751 172 192 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 164 188 ) ( -748 164 187 ) ( -748 163 188 ) "dev textures/dev_normal" -236 -264 180 1 1
+}
+// brush 3
+{
+( -752 172 184 ) ( -752 171 184 ) ( -752 172 183 ) "dev textures/dev_normal" -236 -264 180 1 1
+( -748 164 180 ) ( -747 164 180 ) ( -748 164 179 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 164 180 ) ( -748 163 180 ) ( -747 164 180 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 172 184 ) ( -751 172 184 ) ( -752 171 184 ) "dev textures/dev_normal" -236.00003 272 270 1 1
+( -752 172 184 ) ( -752 172 183 ) ( -751 172 184 ) "dev textures/dev_normal" 264 272 270 1 1
+( -748 164 180 ) ( -748 164 179 ) ( -748 163 180 ) "dev textures/dev_normal" -236 -264 180 1 1
+}
+}

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://7wib3ni0iygm"
+path="res://.godot/imported/flatMap.map-7ab029338c53ed697007bcbc34a4e056.tres"
+
+[deps]
+
+source_file="res://assets/maps/flatMap.map"
+dest_files=["res://.godot/imported/flatMap.map-7ab029338c53ed697007bcbc34a4e056.tres"]
+
+[params]
+
