@@ -5,13 +5,13 @@ extends RigidBody3D
 # the player's collision hull is made from a custom "gem" collision shape, which is effectively a cylinder with a pointed tip at each end.
 var playerHeight:float = 1.75 				# (def: 1.75) the total height of the player's collision hull (in meters)
 var playerWidth:float = 0.50 				# (def: 0.50) the total width of the player's collision hull (in meters)
-var playerSides:int = 12					# (def: 10.0) the total number of sides of the player's collision hull
+var playerSides:int = 12					# (def: 12.0) the total number of sides of the player's collision hull
 var playerTipAngle:float = 25				# (def: 25.0) the angle of the tips of the player's collision hull (in degrees, with respect to a horitzontal plane)
 
-var playerMass:float = 60					# (def: 60.0) kilograms
+var playerMass:float = 60					# (def: 60.0) the mass of the player's rigidbody (in kilograms)
 
 var playerCrouchHeightCoef:float = 0.60 	# (def: 0.60) the coefficient of the player's total height that the player shrinks to while crouching
-var playerCrouchSpeed:float = 8
+var playerCrouchSpeed:float = 8				# (def: 8.00) the rate at which the player transitions from standing to crouching, and vice-versa.
 
 var playerHeadEyesHeightCoef:float = 0.94 	# (def: 0.94) the coefficient of the player's total height upon which the camera is positioned
 var playerHeadOffsetX:float = 0.00 			# (def: 0.00) the left/right offset from center upon which the camera is positioned (in meters)
@@ -22,7 +22,7 @@ var playerStepHeightCoef:float = 0.30		# (def: 0.30) the coefficient of the play
 
 ### player physics ###
 
-var physBaseGravity:float = 15.72			# (def: 15.72)
+var physBaseGravity:float = 15.72			# (def: 15.72) the world gravity for the scene
 
 var physBaseGroundSpeed:float = 5.72		# (def: 5.72) the base maximum speed the player will accelerate to under their own power while on the ground (in meters per second)
 var physBaseGroundAccelCoef:float = 10		# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while on the ground. Must be greater than decel value.
@@ -30,30 +30,31 @@ var physBaseGroundDecelCoef:float = 6		# (def: 6.00) the base decelerative rate 
 var physBaseAirSpeed:float = 0.572			# (def: 0.572) the base maximum speed the player will accelerate to under their own power while in the air (in meters per second)
 var physBaseAirAccelCoef:float = 10			# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while in the air. Must be greater than decel value.
 var physBaseAirDecelCoef:float = 0			# (def: 0.00) the base decelerative rate under which the player will stop moving while in the air.
-var physBaseNoclipSpeed:float = 16.0		# (def: 5.72) the base maximum speed the player will accelerate to under their own power while noclipping (in meters per second)
+var physBaseNoclipSpeed:float = 16.0		# (def: 16.0) the base maximum speed the player will accelerate to under their own power while noclipping (in meters per second)
 var physBaseNoclipAccelCoef:float = 10		# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while noclipping. Must be greater than decel value.
 var physBaseNoclipDecelCoef:float = 6		# (def: 6.00) the base decelerative rate under which the player will stop moving while noclipping.
 
 var physGroundMinDecelSpeed:float = 1.91	# (def: 1.91) the minimum speed at which the player can travel before decelerative forces become stronger than usual. Think of this as the player "catching their footing" as they slide to a stop. (in meters per second).
 
 var physBaseJumpImpulse:float = 5.39		# (def: 5.39) the base impulse force applied to the player during a jump (in meters per second)
-var physJumpCooldownTime:float = 0.15		# (def: 0.07) how long after initiating a jump before the player is able to jump again (in seconds)
+var physJumpCooldownTime:float = 0.15		# (def: 0.15) how long after initiating a jump before the player is able to jump again (in seconds)
 
 var physMaxFloorAng:float = 47.5			# (def: 47.5) the maximum slope angle the player is able to walk on (in degrees)
 
-var physSprintSpeedCoef:float = 1.40		# (def: 1.25) the coefficient of the player's base movespeed applied while the player is sprinting
-var physCrouchSpeedCoef:float = 0.40		# (def: 0.65) the coefficient of the player's base movespeed applied while the player is crouching
+var physSprintSpeedCoef:float = 1.40		# (def: 1.40) the coefficient of the player's base movespeed applied while the player is sprinting
+var physCrouchSpeedCoef:float = 0.40		# (def: 0.40) the coefficient of the player's base movespeed applied while the player is crouching
 var physWalkSpeedCoef:float = 0.50			# (def: 0.50) the coefficient of the player's base movespeed applied while the player is walking
 var physSlowCrouchSpeedCoef:float = 0.25	# (def: 0.25) the coefficient of the player's base movespeed applied while the player is slow-crouching
 
-var physStepHeightPID = PID.new(100,0,10)
-var physStepTargetHeightCoef = 0.66
-var physStepRayHeight = 2
-var physSlopeRepelForce = 10
+var physStepHeightPID = PID.new(100,0,10)	# (def: 100,0,10) the player's "hover" height is managed by a PID loop. Don't touch this unless you know what you're doing.
+var physStepRayHeightCoef = 2				# (def: 2.00) a coefficient used to determine the length of the player's legRays
+var physStepTargetHeightCoef = 0.50			# (def: 0.50) a coefficient of the legRays' total breadth which acts as the target height for physStepHeightPID
+var physStepTargetHeightTrim = 0.16			# (def: 0.16) an additional "trim" value meant to adjust for the unavoidable "slop" introduced by using a PID loop without an integral value. Added on top of physStepTargetHeightCoef.
+var physSlopeRepelForce = 10				# (def: 10.0) the scaling force that pushes the player away from surfaces that exceed the player's physMaxFloorAng. 
 
 ### adjustables ###
 
-@export_range(0.10,6.00,0.01,"or_greater") var mouseSens:float = 1.8 # (def: 1.8) mouse sensitivity (equivalent to Source Engine w/ raw input)
+@export_range(0.10,6.00,0.01,"or_greater") var mouseSens:float = 1.8 # (def: 1.8) mouse sensitivity (equivalent to Source 1 w/ raw input)
 @export_range(50,90,1) var cameraFOV:float = 74 # (def: 74) the player viewport's field of view (measured vertically, not horizontally)
 @export var autojump:bool = false # (def: false) auto-bhop while true
 
@@ -362,7 +363,7 @@ func _update_rays() -> void:
 func _grounded_hover(delta:float) -> void:
 	var force:Vector3
 	force.x = 0
-	force.y = physStepHeightPID.update(physStepTargetHeightCoef,legRays["shortest ray"],delta)
+	force.y = physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta)
 	force.z = 0
 	self.apply_force(force * self.mass)
 	return
@@ -403,7 +404,7 @@ func _grounded_jump(delta:float) -> void:
 	return
 
 func _aerial_landing(delta:float) -> void:
-	if jumping and legRays["shortest ray"] < physStepTargetHeightCoef and time_since_last_jump >= physJumpCooldownTime:
+	if jumping and legRays["shortest ray"] < (physStepTargetHeightCoef+physStepTargetHeightTrim) and time_since_last_jump >= physJumpCooldownTime:
 		jumping = false
 	time_since_last_jump += delta
 	time_since_last_jump = clamp(time_since_last_jump,0,physJumpCooldownTime)
@@ -568,6 +569,7 @@ func _mouse_handler(event:InputEvent) -> void:
 func _player_assembly() -> void:
 	
 	self.mass = playerMass
+	%headEyes.fov = cameraFOV
 	
 	# create and position the player's collision hulls
 	var apothem:float = (playerWidth / 2) * cos(PI / playerSides)
@@ -619,7 +621,7 @@ func _player_assembly() -> void:
 	_create_ray_ring(
 		"legRay",
 		%standHull,
-		(playerHeight * playerStepHeightCoef) * physStepRayHeight,
+		(playerHeight * playerStepHeightCoef) * physStepRayHeightCoef,
 		standHullHeight,
 		playerWidth / 2,
 		playerSides,
