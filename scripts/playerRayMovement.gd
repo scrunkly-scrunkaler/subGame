@@ -146,7 +146,7 @@ func _grounded_movement_handler(delta:float) -> void:
 
 func _aerial_movement_handler(delta:float) -> void:
 	_update_rays()
-	_aerial_landing(delta)
+	_aerial_jump_recovery(delta)
 	_aerial_locomotion(delta)
 	return
 
@@ -335,7 +335,7 @@ func _aerial_locomotion(delta:float) -> void:
 	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
 	return
 
-func _aerial_landing(delta:float) -> void:
+func _aerial_jump_recovery(delta:float) -> void:
 	if jumping and legRays["shortest ray"] < (physStepTargetHeightCoef+physStepTargetHeightTrim) and time_since_last_jump >= physJumpCooldownTime:
 		jumping = false
 	time_since_last_jump += delta
@@ -520,7 +520,7 @@ func _is_on_floor() -> bool:
 		var floorNormal:float = rad_to_deg(legRay.get_collision_normal().angle_to(Vector3(0,1,0)))
 		if legRay.is_colliding() and floorNormal <= physMaxFloorAng:
 			return true
-	return false
+	return false 
 
 func _is_in_water() -> bool:
 	#temp
