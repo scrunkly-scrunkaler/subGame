@@ -48,7 +48,8 @@ var physSlopeSpeedupCoef:float = 1.00		# (def: 1.00) the maximum speedup the pla
 var physSlopeSlowdownCoef:float = 0.75		# (def: 0.75) the maximum slowdown the player will experience when ascending a walkable slope.
 
 var physBaseJumpImpulse:float = 5.39		# (def: 5.39) the base impulse force applied to the player during a jump (in meters per second)
-var physJumpCooldownTime:float = 0.15		# (def: 0.15) how long after initiating a jump before the player is able to jump again (in seconds)
+var physJumpCooldownTime:float = 0.15		# (def: 0.15) how long after initiating a jump before the player is able to initiate another (in seconds)
+var physJumpRecoverTime:float = 0.10		# (def: 0.10) how long after landing from a jump before the player is able to initiate another (in seconds)
 
 var physMaxFloorAng:float = 47.5			# (def: 47.5) the maximum slope angle the player is able to walk on (in degrees)
 
@@ -96,6 +97,7 @@ var legRays:Dictionary = {
 }
 var jumping:bool = false
 var time_since_last_jump:float = INF
+var time_since_landed:float = INF
 var camCrouchProgressCoef:float = 0
 var crouching:bool = false
 var water_body: water
@@ -251,7 +253,7 @@ func _grounded_locomotion(delta:float) -> void:
 
 func _grounded_jump(delta:float) -> void:
 	## jumping from the ground
-	if inputJump and not jumping and time_since_last_jump >= physJumpCooldownTime:
+	if inputJump and not jumping and time_since_last_jump >= physJumpCooldownTime and time_since_landed >= physJumpRecoverTime:
 		time_since_last_jump = 0
 		jumping = true
 		var currentVelocity:Vector3
@@ -265,6 +267,8 @@ func _grounded_jump(delta:float) -> void:
 		var force:Vector3
 		force = targetVelocity - currentVelocity
 		self.apply_impulse(force * self.mass)
+	time_since_landed += delta
+	time_since_landed = clamp(time_since_landed,0,physJumpRecoverTime)
 	return
 
 func _grounded_slope_repel(delta:float) -> void:
@@ -362,6 +366,7 @@ func _aerial_jump_recovery(delta:float) -> void:
 	## the landing of a previously-initiated jump
 	if jumping and legRays["shortest ray"] < (physStepTargetHeightCoef+physStepTargetHeightTrim) and time_since_last_jump >= physJumpCooldownTime:
 		jumping = false
+		time_since_landed = 0
 	time_since_last_jump += delta
 	time_since_last_jump = clamp(time_since_last_jump,0,physJumpCooldownTime)
 	return
