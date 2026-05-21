@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7krc00rkyxfc" path="res://scripts/playerRayMovement.gd" id="1_ad82n"]
 [ext_resource type="Shader" uid="uid://d5jfbgi7hm1h" path="res://shaders/stylized_water_underwater_effect.gdshader" id="2_edi8m"]
-[ext_resource type="Script" uid="uid://cl4s0d05p3ict" path="res://scenes/supplementaries/underwaterEffector.gd" id="3_2xbkh"]
+[ext_resource type="Script" uid="uid://cl4s0d05p3ict" path="res://scripts/underwaterEffector.gd" id="3_2xbkh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1yjhn"]
 friction = 0.0
@@ -75,7 +75,7 @@ unique_name_in_owner = true
 
 [node name="underwaterEffector" type="MeshInstance3D" parent="headYaw/headPitch/headEyes" unique_id=1205665413]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26232535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 mesh = SubResource("QuadMesh_vupha")
 script = ExtResource("3_2xbkh")
 

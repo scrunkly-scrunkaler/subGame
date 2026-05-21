@@ -634,4 +634,22 @@
 ( -448 768 576 ) ( -447 768 576 ) ( -448 768 577 ) __TB_empty 0 0 0 1 1
 ( -448 768 576 ) ( -448 768 577 ) ( -448 769 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
 }
+// brush 71
+{
+( -64 -1088 -240 ) ( -64 -1087 -240 ) ( -64 -1088 -239 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -64 -1088 -240 ) ( -64 -1088 -239 ) ( -63 -1088 -240 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -64 -1088 -240 ) ( -63 -1088 -240 ) ( -64 -1087 -240 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -960 -16 ) ( 64 -959 -16 ) ( 65 -960 -16 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -960 -224 ) ( 65 -960 -224 ) ( 64 -960 -223 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -960 -224 ) ( 64 -960 -223 ) ( 64 -959 -224 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 72
+{
+( -64 -1088 -240 ) ( -64 -1087 -240 ) ( -64 -1088 -239 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -960 -224 ) ( 64 -960 -223 ) ( 65 -960 -224 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -64 -1088 -240 ) ( -63 -1088 -240 ) ( -64 -1087 -240 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -960 0 ) ( 64 -959 0 ) ( 65 -960 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -832 -224 ) ( 65 -832 -224 ) ( 64 -832 -223 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 64 -960 -224 ) ( 64 -960 -223 ) ( 64 -959 -224 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
 }

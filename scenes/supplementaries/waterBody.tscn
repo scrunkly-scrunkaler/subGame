@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ba3ytmyc650df"]
 
 [ext_resource type="Shader" uid="uid://boglb3k35ffpp" path="res://shaders/stylized_water_surface.gdshader" id="1_6gtqw"]
-[ext_resource type="Script" uid="uid://cjiuh8xe87rga" path="res://scenes/supplementaries/waterMesh.gd" id="2_pfbjy"]
+[ext_resource type="Script" uid="uid://cjiuh8xe87rga" path="res://scripts/waterMesh.gd" id="2_pfbjy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtqw"]
 render_priority = 0

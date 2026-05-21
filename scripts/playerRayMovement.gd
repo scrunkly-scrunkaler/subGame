@@ -18,6 +18,11 @@ var playerHeadOffsetX:float = 0.00 			# (def: 0.00) the left/right offset from c
 var playerHeadOffsetY:float = 0.00			# (def: 0.00) the up/down offset from center upon which the camera is positioned (in meters)
 var playerHeadOffsetZ:float = 0.00 			# (def: 0.00) the forward/backward offset from center upon which the camera is positioned (in meters)
 
+var playerTPPOffsetX:float = 0.00			# (def: 0.00)
+var playerTPPOffsetY:float = -0.25			# (def: -0.25)
+var playerTPPOffsetZ:float = 2.00			# (def: 2.00)
+var playerTPPTransitionSpeed:float = 0.1		# (def: 4.00)
+
 var playerStepHeightCoef:float = 0.30		# (def: 0.30) the coefficient of the player's total height that the player will automatically step up or down to when encountering uneven terrain (eg. stairs)
 
 ### player physics ###
@@ -71,6 +76,7 @@ var inputCrouch:bool = false
 var inputWalk:bool = false
 var inputJump:bool = false
 var inputNoclip:bool = false
+var inputPerspectiveToggle:bool = false
 var inputCamX:Vector3 = Vector3(0,0,0)
 var inputCamY:Vector3 = Vector3(0,0,0)
 var inputCamZ:Vector3 = Vector3(0,0,0)
@@ -89,6 +95,7 @@ var jumping:bool = false
 var time_since_last_jump:float = INF
 var camCrouchProgressCoef:float = 0
 var crouching:bool = false
+var water_body: water
 
 #########################################################################################################################################
 ### ENGINE CALLBACKS ###
@@ -108,6 +115,7 @@ func _unhandled_input(event:InputEvent) -> void:
 
 func _process(delta:float) -> void:
 	# nothing here for now
+	_debug_tpp_transitioner(delta)
 	_stance_cam_transitioner(delta)
 	return
 
@@ -145,6 +153,7 @@ func _aerial_movement_handler(delta:float) -> void:
 func _swimming_movement_handler(delta:float) -> void:
 	_update_rays()
 	_swimming_hover(delta)
+	_swimming_clamber(delta)
 	_swimming_locomotion(delta)
 	return
 
@@ -221,6 +230,49 @@ func _grounded_locomotion(delta:float) -> void:
 	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
 	return
 
+func _grounded_jump(delta:float) -> void:
+	if inputJump and not jumping and time_since_last_jump >= physJumpCooldownTime:
+		time_since_last_jump = 0
+		jumping = true
+		var currentVelocity:Vector3
+		currentVelocity = self.linear_velocity
+		var virNormal:Vector3
+		virNormal = _get_virtual_normal()
+		var targetVelocity:Vector3
+		targetVelocity.x = currentVelocity.x + (virNormal.x * physBaseJumpImpulse)
+		targetVelocity.y = max(currentVelocity.y,0) + (virNormal.y * physBaseJumpImpulse) # the player 
+		targetVelocity.z = currentVelocity.z + (virNormal.z * physBaseJumpImpulse)
+		var force:Vector3
+		force = targetVelocity - currentVelocity
+		self.apply_impulse(force * self.mass)
+	return
+
+func _grounded_slope_repel(delta:float) -> void:
+	var force:Vector3 = Vector3(0,0,0)
+	for legRay:RayCast3D in legRays["IDs"]:
+		if legRay.is_colliding():
+			var normal:Vector3 = legRay.get_collision_normal()
+			var slopeAngle:float = rad_to_deg(normal.angle_to(Vector3(0,1,0)))
+			if slopeAngle > physMaxFloorAng and normal.y > 0: # only repel invalid floor surfaces
+				var repelDir:Vector3 = Vector3(normal.x, 0, normal.z).normalized() # only repel the player away horizontally
+				var contactToPlayer:Vector3 = self.global_position - legRay.get_collision_point()
+				contactToPlayer.y = 0
+				contactToPlayer = contactToPlayer.normalized()
+				var alignment:float = max(repelDir.dot(contactToPlayer), 0) # only repel uphill surfaces (downhill are ignored)
+				var steepness:float = clamp((slopeAngle - physMaxFloorAng) / (90.0 - physMaxFloorAng),0.0,1.0)
+				var steepnessCoef:float = lerp(0.5,1.0,steepness) # stronger repel force for steeper surfaces
+				force += repelDir * physSlopeRepelForce * alignment * steepnessCoef # each valid ray touching a surface adds its' own force
+	self.apply_force(force * self.mass)
+	return
+
+func _grounded_hover(delta:float) -> void:
+	var force:Vector3
+	force.x = 0
+	force.y = physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta)
+	force.z = 0
+	self.apply_force(force * self.mass)
+	return
+
 ### AERIAL ##############################################################################################################################
 
 func _aerial_locomotion(delta:float) -> void:
@@ -283,6 +335,13 @@ func _aerial_locomotion(delta:float) -> void:
 	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
 	return
 
+func _aerial_landing(delta:float) -> void:
+	if jumping and legRays["shortest ray"] < (physStepTargetHeightCoef+physStepTargetHeightTrim) and time_since_last_jump >= physJumpCooldownTime:
+		jumping = false
+	time_since_last_jump += delta
+	time_since_last_jump = clamp(time_since_last_jump,0,physJumpCooldownTime)
+	return
+
 ### SWIMMING ############################################################################################################################
 
 func _swimming_locomotion(delta:float) -> void:
@@ -340,9 +399,31 @@ func _swimming_locomotion(delta:float) -> void:
 	# finally, we apply everything we calculated onto the player.
 	var force:Vector3
 	force.x = (targetVelocity.x - currentVelocity.x) / delta                     # ]
-	force.y = ((targetVelocity.y - currentVelocity.y) / delta) + physBaseGravity * 1.5 # ]--- determine how much force is required to reach the target velocity from the player's current velocity this frame.
+	force.y = ((targetVelocity.y - currentVelocity.y) / delta) + physBaseGravity * 0.9 # ]--- determine how much force is required to reach the target velocity from the player's current velocity this frame.
 	force.z = (targetVelocity.z - currentVelocity.z) / delta                     # ]
 	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
+	return
+
+func _swimming_hover(delta:float) -> void:
+	var force:Vector3
+	force.x = 0
+	force.y = max(physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta),0)
+	force.z = 0
+	self.apply_force(force * self.mass)
+	return
+
+func _swimming_clamber(delta:float) -> void:
+	#var clamberableSurface:bool = false
+	#
+	# some bullshit involving `PhysicsServer3D.body_test_motion`
+	#
+	#if clamberableSurface:
+	#	var force:Vector3
+	#	force.x = 0
+	#	force.y = 0
+	#	force.z = 0
+	#	self.apply_force(force * self.mass)
+	return
 
 ### NOCLIP ##############################################################################################################################
 
@@ -407,7 +488,7 @@ func _noclip_locomotion(delta:float) -> void:
 	
 	return
 
-### TERTIARY FUNCTIONS ##################################################################################################################
+### SHARED FUNCTIONS ####################################################################################################################
 
 func _update_rays() -> void:
 	var minHeight:float = 1
@@ -432,64 +513,6 @@ func _update_rays() -> void:
 	#print(snapped(legRays["shortest ray"],0.01))
 	return
 
-func _grounded_hover(delta:float) -> void:
-	var force:Vector3
-	force.x = 0
-	force.y = physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta)
-	force.z = 0
-	self.apply_force(force * self.mass)
-	return
-
-func _swimming_hover(delta:float) -> void:
-	var force:Vector3
-	force.x = 0
-	force.y = max(physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta),0)
-	force.z = 0
-	self.apply_force(force * self.mass)
-	return
-
-func _grounded_slope_repel(delta:float) -> void:
-	var force:Vector3 = Vector3(0,0,0)
-	for legRay:RayCast3D in legRays["IDs"]:
-		if legRay.is_colliding():
-			var normal:Vector3 = legRay.get_collision_normal()
-			var slopeAngle:float = rad_to_deg(normal.angle_to(Vector3(0,1,0)))
-			if slopeAngle > physMaxFloorAng and normal.y > 0: # only repel invalid floor surfaces
-				var repelDir:Vector3 = Vector3(normal.x, 0, normal.z).normalized() # only repel the player away horizontally
-				var contactToPlayer:Vector3 = self.global_position - legRay.get_collision_point()
-				contactToPlayer.y = 0
-				contactToPlayer = contactToPlayer.normalized()
-				var alignment:float = max(repelDir.dot(contactToPlayer), 0) # only repel uphill surfaces (downhill are ignored)
-				var steepness:float = clamp((slopeAngle - physMaxFloorAng) / (90.0 - physMaxFloorAng),0.0,1.0)
-				var steepnessCoef:float = lerp(0.5,1.0,steepness) # stronger repel force for steeper surfaces
-				force += repelDir * physSlopeRepelForce * alignment * steepnessCoef # each valid ray touching a surface adds its' own force
-	self.apply_force(force * self.mass)
-	return
-
-func _grounded_jump(delta:float) -> void:
-	if inputJump and not jumping and time_since_last_jump >= physJumpCooldownTime:
-		time_since_last_jump = 0
-		jumping = true
-		var currentVelocity:Vector3
-		currentVelocity = self.linear_velocity
-		var virNormal:Vector3
-		virNormal = _get_virtual_normal()
-		var targetVelocity:Vector3
-		targetVelocity.x = currentVelocity.x + (virNormal.x * physBaseJumpImpulse)
-		targetVelocity.y = max(currentVelocity.y,0) + (virNormal.y * physBaseJumpImpulse) # the player 
-		targetVelocity.z = currentVelocity.z + (virNormal.z * physBaseJumpImpulse)
-		var force:Vector3
-		force = targetVelocity - currentVelocity
-		self.apply_impulse(force * self.mass)
-	return
-
-func _aerial_landing(delta:float) -> void:
-	if jumping and legRays["shortest ray"] < (physStepTargetHeightCoef+physStepTargetHeightTrim) and time_since_last_jump >= physJumpCooldownTime:
-		jumping = false
-	time_since_last_jump += delta
-	time_since_last_jump = clamp(time_since_last_jump,0,physJumpCooldownTime)
-	return
-
 func _is_on_floor() -> bool:
 	if jumping:
 		return false
@@ -500,9 +523,10 @@ func _is_on_floor() -> bool:
 	return false
 
 func _is_in_water() -> bool:
-	if %waterProbe.global_position.y > 0.5:
-		return false
-	return true
+	#temp
+	if %waterProbe.global_position.y < 0.5:
+		return true
+	return false
 
 func _get_virtual_normal() -> Vector3:
 	
@@ -567,17 +591,6 @@ func _stance_handler(delta:float) -> void:
 	%stance.text = "Stance: %s" % _get_current_stance()
 	return
 
-func _stance_cam_transitioner(delta:float) -> void:
-	var camStandingHeight = playerHeight * playerHeadEyesHeightCoef
-	var camCrouchAdjust = playerHeight - (playerHeight * playerCrouchHeightCoef)
-	var camCrouchingHeight = camStandingHeight - camCrouchAdjust
-	if crouching:
-		%headYaw.position.y = utils.lerp_toward(%headYaw.position.y,camCrouchingHeight,playerCrouchSpeed*delta,camCrouchingHeight+(camCrouchAdjust*0.10))
-	else:
-		%headYaw.position.y = utils.lerp_toward(%headYaw.position.y,camStandingHeight,playerCrouchSpeed*delta,camStandingHeight-(camCrouchAdjust*0.10))
-	camCrouchProgressCoef = snapped(inverse_lerp(camStandingHeight,camCrouchingHeight,%headYaw.position.y),0.01)
-	return
-
 func _get_current_stance() -> String:
 	if inputNoclip:
 		return "noclipping"
@@ -627,10 +640,36 @@ func _input_handler() -> void:
 	if Input.is_action_just_pressed("Noclip"):
 		inputNoclip = not inputNoclip
 	
+	if Input.is_action_just_pressed("DebugPerspectiveToggle"):
+		inputPerspectiveToggle = not inputPerspectiveToggle
+	
 	# camera direction
 	inputCamX = %headEyes.global_basis.x
 	inputCamY = %headEyes.global_basis.y
 	inputCamZ = %headEyes.global_basis.z
+	return
+
+#########################################################################################################################################
+### PROCESS ###
+#########################################################################################################################################
+
+func _stance_cam_transitioner(delta:float) -> void:
+	var camStandingHeight = playerHeight * playerHeadEyesHeightCoef
+	var camCrouchAdjust = playerHeight - (playerHeight * playerCrouchHeightCoef)
+	var camCrouchingHeight = camStandingHeight - camCrouchAdjust
+	if crouching:
+		%headYaw.position.y = utils.lerp_toward(%headYaw.position.y,camCrouchingHeight,playerCrouchSpeed*delta,camCrouchingHeight+(camCrouchAdjust*0.10))
+	else:
+		%headYaw.position.y = utils.lerp_toward(%headYaw.position.y,camStandingHeight,playerCrouchSpeed*delta,camStandingHeight-(camCrouchAdjust*0.10))
+	camCrouchProgressCoef = snapped(inverse_lerp(camStandingHeight,camCrouchingHeight,%headYaw.position.y),0.01)
+	return
+
+func _debug_tpp_transitioner(delta:float) -> void:
+	var playerTPPOffset:Vector3 = Vector3(playerTPPOffsetX,playerTPPOffsetY,playerTPPOffsetZ)
+	if inputPerspectiveToggle:
+		%headEyes.position = utils.lerp_toward(%headEyes.position,playerTPPOffset,playerTPPTransitionSpeed,playerTPPOffset*0.9)
+	else:
+		%headEyes.position = utils.lerp_toward(%headEyes.position,Vector3.ZERO,playerTPPTransitionSpeed,playerTPPOffset*0.1)
 	return
 
 #########################################################################################################################################
@@ -706,6 +745,10 @@ func _player_assembly() -> void:
 	%headEyes.position.x = 0
 	%headEyes.position.y = playerHeadOffsetY
 	%headEyes.position.z = playerHeadOffsetZ
+	
+	%underwaterEffector.position.x = 0
+	%underwaterEffector.position.y = 0
+	%underwaterEffector.position.z = -(playerWidth / 2)
 	
 	# create, position, and catalog the player's legRays
 	_create_ray_ring(
