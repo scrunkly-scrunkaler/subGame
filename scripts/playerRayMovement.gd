@@ -35,14 +35,17 @@ var physBaseGroundDecelCoef:float = 6		# (def: 6.00) the base decelerative rate 
 var physBaseAirSpeed:float = 0.572			# (def: 0.572) the base maximum speed the player will accelerate to under their own power while in the air (in meters per second)
 var physBaseAirAccelCoef:float = 4			# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while in the air. Must be greater than decel value.
 var physBaseAirDecelCoef:float = 0			# (def: 0.00) the base decelerative rate under which the player will stop moving while in the air.
-var physBaseSwimSpeed:float = 4.00
-var physBaseSwimAccelCoef:float = 5
-var physBaseSwimDecelCoef:float = 5
+var physBaseSwimSpeed:float = 4.00			# (def: 4.00) the base maximum speed the player will accelerate to under their own power while swimming (in meters per second)
+var physBaseSwimAccelCoef:float = 5			# (def: 5.00) the base accelerative rate under which the player will aproach the target speed while swimming. Must be greater than decel value.
+var physBaseSwimDecelCoef:float = 5			# (def: 5.00) the base decelerative rate under which the player will stop moving while swimming.
 var physBaseNoclipSpeed:float = 16.0		# (def: 16.0) the base maximum speed the player will accelerate to under their own power while noclipping (in meters per second)
 var physBaseNoclipAccelCoef:float = 10		# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while noclipping. Must be greater than decel value.
 var physBaseNoclipDecelCoef:float = 6		# (def: 6.00) the base decelerative rate under which the player will stop moving while noclipping.
 
 var physGroundMinDecelSpeed:float = 1.91	# (def: 1.91) the minimum speed at which the player can travel before decelerative forces become stronger than usual. Think of this as the player "catching their footing" as they slide to a stop. (in meters per second).
+
+var physSlopeSpeedupCoef:float = 1.00		# (def: 1.00) the maximum speedup the player will experience when descending a walkable slope.
+var physSlopeSlowdownCoef:float = 0.75		# (def: 0.75) the maximum slowdown the player will experience when ascending a walkable slope.
 
 var physBaseJumpImpulse:float = 5.39		# (def: 5.39) the base impulse force applied to the player during a jump (in meters per second)
 var physJumpCooldownTime:float = 0.15		# (def: 0.15) how long after initiating a jump before the player is able to jump again (in seconds)
@@ -167,6 +170,7 @@ func _noclip_movement_handler(delta:float) -> void:
 #### GROUNDED ###########################################################################################################################
 
 func _grounded_locomotion(delta:float) -> void:
+	## general non-specialized grounded locomotion
 	
 	# first, determine the direction the player is attempting to move
 	var targetDir:Vector3
@@ -187,8 +191,23 @@ func _grounded_locomotion(delta:float) -> void:
 	else:
 		targetMoveSpeedCoef = 1.0
 	
+	# now, we need to account for slopes, which (usually) slow the player down when ascending, and speed them up while descending
+	var slopeSpeedCoef:float = 1.0
+	var slopeAng:float = rad_to_deg(legRays["virtual normal"].angle_to(Vector3(0,1,0))) # get the angle of the slope in degrees
+	var slopeAngCoef:float = clamp(slopeAng / physMaxFloorAng, 0, 1) # create a coefficient comparing the slope angle against the player's physMaxFloorAng
+	if targetDir != Vector3(0,0,0) and slopeAngCoef > 0: # don't touch the player's slope coef if they're not moving on a slope.
+		var downhillDir:Vector3 = Vector3(0,-1,0).slide(legRays["virtual normal"]) # ]
+		downhillDir.y = 0                                                          # ]--- establish, horizontally, which direction is considered downhill
+		downhillDir = downhillDir.normalized()                                     # ]
+		var relativeDir:float = targetDir.dot(downhillDir) # compare the player's target direction against the direction of the slope.
+		if relativeDir > 0: # if traveling downhill
+			slopeSpeedCoef = lerp(1.0, physSlopeSpeedupCoef, relativeDir * slopeAngCoef)
+		elif relativeDir < 0: # if traveling uphill
+			slopeSpeedCoef = lerp(1.0, physSlopeSlowdownCoef, abs(relativeDir) * slopeAngCoef)
+	
+	# combine all the speed modifiers together to get a final target speed the player wants to move at
 	var targetSpd:float
-	targetSpd = targetMoveSpeedCoef * physBaseGroundSpeed
+	targetSpd = targetMoveSpeedCoef * slopeSpeedCoef * physBaseGroundSpeed
 	
 	# next, we handle acceleration (locomotion) and deceleration (friction)
 	var currentVelocity:Vector3
@@ -208,7 +227,7 @@ func _grounded_locomotion(delta:float) -> void:
 		var newSpd:float = max(currentSpd - decelDelta, 0.0) # calculate the player's new speed after applying the delta to their current speed.
 		var newSpdCoef:float = newSpd/currentSpd # convert the new speed to a coefficient to skip needing to figure out the player's current heading.
 		targetVelocity.x = targetVelocity.x * newSpdCoef # ]
-		targetVelocity.y = targetVelocity.y * newSpdCoef # ]--- apply the new speed to the player's current velocity
+		targetVelocity.y = targetVelocity.y * newSpdCoef # ]--- apply the new speed to the player's target velocity
 		targetVelocity.z = targetVelocity.z * newSpdCoef # ]
 	
 	# locomotion
@@ -219,7 +238,7 @@ func _grounded_locomotion(delta:float) -> void:
 			var baseAccelDelta:float = physBaseGroundSpeed * physBaseGroundAccelCoef * min(targetMoveSpeedCoef,1.0) * delta # determine how much the player's speed could change from acceleration this frame
 			var accelDelta:float = min(baseAccelDelta, requiredSpd) # cap the delta if it would cause the player to exceed their target speed
 			targetVelocity.x = targetVelocity.x + (targetDir.x * accelDelta) # ] 
-			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]--- apply the new speed to the player's current velocity
+			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]--- apply the new speed to the player's target velocity
 			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]
 	
 	# finally, we apply everything we calculated onto the player.
@@ -231,13 +250,14 @@ func _grounded_locomotion(delta:float) -> void:
 	return
 
 func _grounded_jump(delta:float) -> void:
+	## jumping from the ground
 	if inputJump and not jumping and time_since_last_jump >= physJumpCooldownTime:
 		time_since_last_jump = 0
 		jumping = true
 		var currentVelocity:Vector3
 		currentVelocity = self.linear_velocity
 		var virNormal:Vector3
-		virNormal = _get_virtual_normal()
+		virNormal = legRays["virtual normal"]
 		var targetVelocity:Vector3
 		targetVelocity.x = currentVelocity.x + (virNormal.x * physBaseJumpImpulse)
 		targetVelocity.y = max(currentVelocity.y,0) + (virNormal.y * physBaseJumpImpulse) # the player 
@@ -248,12 +268,13 @@ func _grounded_jump(delta:float) -> void:
 	return
 
 func _grounded_slope_repel(delta:float) -> void:
+	## repels the player away from steep surfaces that their legRays are intersecting (otherwise you can stand mostly over top of steep uphill slope transitions, which looks weird)
 	var force:Vector3 = Vector3(0,0,0)
 	for legRay:RayCast3D in legRays["IDs"]:
 		if legRay.is_colliding():
 			var normal:Vector3 = legRay.get_collision_normal()
 			var slopeAngle:float = rad_to_deg(normal.angle_to(Vector3(0,1,0)))
-			if slopeAngle > physMaxFloorAng and normal.y > 0: # only repel invalid floor surfaces
+			if slopeAngle > physMaxFloorAng and normal.y > 0: # only repel non-traversible floor surfaces
 				var repelDir:Vector3 = Vector3(normal.x, 0, normal.z).normalized() # only repel the player away horizontally
 				var contactToPlayer:Vector3 = self.global_position - legRay.get_collision_point()
 				contactToPlayer.y = 0
@@ -261,11 +282,12 @@ func _grounded_slope_repel(delta:float) -> void:
 				var alignment:float = max(repelDir.dot(contactToPlayer), 0) # only repel uphill surfaces (downhill are ignored)
 				var steepness:float = clamp((slopeAngle - physMaxFloorAng) / (90.0 - physMaxFloorAng),0.0,1.0)
 				var steepnessCoef:float = lerp(0.5,1.0,steepness) # stronger repel force for steeper surfaces
-				force += repelDir * physSlopeRepelForce * alignment * steepnessCoef # each valid ray touching a surface adds its' own force
+				force += repelDir * physSlopeRepelForce * alignment * steepnessCoef # each ray touching a valid surface adds its' own force
 	self.apply_force(force * self.mass)
 	return
 
 func _grounded_hover(delta:float) -> void:
+	## raycast hover for step-up/down handling. general "realistic" feeling leg-suspension.
 	var force:Vector3
 	force.x = 0
 	force.y = physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta)
@@ -276,6 +298,7 @@ func _grounded_hover(delta:float) -> void:
 ### AERIAL ##############################################################################################################################
 
 func _aerial_locomotion(delta:float) -> void:
+	## general non-specialized aerial locomotion ("air-strafing")
 	
 	# first, determine the direction the player is attempting to move
 	var targetDir:Vector3
@@ -315,7 +338,7 @@ func _aerial_locomotion(delta:float) -> void:
 		var newSpd:float = max(currentSpd - decelDelta, 0.0) # calculate the player's new speed after applying the delta to their current speed.
 		var newSpdCoef:float = newSpd/currentSpd # convert the new speed to a coefficient to skip needing to figure out the player's current heading.
 		targetVelocity.x = targetVelocity.x * newSpdCoef # ]
-		targetVelocity.z = targetVelocity.z * newSpdCoef # ]--- apply the new speed to the player's current velocity
+		targetVelocity.z = targetVelocity.z * newSpdCoef # ]--- apply the new speed to the player's target velocity
 	
 	# locomotion
 	if targetDir != Vector3(0,0,0) and physBaseAirAccelCoef > 0: # only apply acceleration if the player is trying to move and can move.
@@ -325,7 +348,7 @@ func _aerial_locomotion(delta:float) -> void:
 			var baseAccelDelta:float = physBaseGroundSpeed * physBaseAirAccelCoef * min(targetMoveSpeedCoef,1.0) * delta # determine how much the player's speed could change from acceleration this frame
 			var accelDelta:float = min(baseAccelDelta, requiredSpd) # cap the delta if it would cause the player to exceed their target speed
 			targetVelocity.x = targetVelocity.x + (targetDir.x * accelDelta) # ]
-			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's current velocity
+			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's target velocity
 	
 	# finally, we apply everything we calculated onto the player.
 	var force:Vector3
@@ -336,6 +359,7 @@ func _aerial_locomotion(delta:float) -> void:
 	return
 
 func _aerial_jump_recovery(delta:float) -> void:
+	## the landing of a previously-initiated jump
 	if jumping and legRays["shortest ray"] < (physStepTargetHeightCoef+physStepTargetHeightTrim) and time_since_last_jump >= physJumpCooldownTime:
 		jumping = false
 	time_since_last_jump += delta
@@ -345,6 +369,7 @@ func _aerial_jump_recovery(delta:float) -> void:
 ### SWIMMING ############################################################################################################################
 
 func _swimming_locomotion(delta:float) -> void:
+	## general non-specialized waterbourne locomotion
 	
 	# first, determine the direction the player is attempting to move
 	var targetDir:Vector3
@@ -352,7 +377,7 @@ func _swimming_locomotion(delta:float) -> void:
 	targetDir.y = (inputMoveDir3D.z * inputCamZ.y) + (inputMoveDir3D.x * inputCamX.y) + (inputMoveDir3D.y * inputCamY.y)
 	targetDir.z = (inputMoveDir3D.z * inputCamZ.z) + (inputMoveDir3D.x * inputCamX.z) + (inputMoveDir3D.y * inputCamY.z)
 	
-	# then, determine the speed the player wants to move at (no crouch because that's how you descend in noclip)
+	# then, determine the speed the player wants to move at (no crouch because that's how you descend while swimming)
 	var targetMoveSpeedCoef:float
 	if inputSprint:
 		targetMoveSpeedCoef = physSprintSpeedCoef
@@ -376,14 +401,14 @@ func _swimming_locomotion(delta:float) -> void:
 	var targetVelocity:Vector3
 	targetVelocity = currentVelocity
 	
-	# friction (may be skipped if physBaseAirDecelCoef = 0)
+	# friction
 	if currentSpd > 0 and physBaseSwimDecelCoef > 0: # only apply friction if the player is moving and friction is set
 		var decelDelta:float = currentSpd * physBaseSwimDecelCoef * delta # determine how much the player's speed could change from deceleration this frame.
 		var newSpd:float = max(currentSpd - decelDelta, 0.0) # calculate the player's new speed after applying the delta to their current speed.
 		var newSpdCoef:float = newSpd/currentSpd # convert the new speed to a coefficient to skip needing to figure out the player's current heading.
 		targetVelocity.x = targetVelocity.x * newSpdCoef # ]
 		targetVelocity.y = targetVelocity.y * newSpdCoef # ]
-		targetVelocity.z = targetVelocity.z * newSpdCoef # ]--- apply the new speed to the player's current velocity
+		targetVelocity.z = targetVelocity.z * newSpdCoef # ]--- apply the new speed to the player's target velocity
 	
 	# locomotion
 	if targetDir != Vector3(0,0,0) and physBaseSwimAccelCoef > 0: # only apply acceleration if the player is trying to move and can move.
@@ -394,7 +419,7 @@ func _swimming_locomotion(delta:float) -> void:
 			var accelDelta:float = min(baseAccelDelta, requiredSpd) # cap the delta if it would cause the player to exceed their target speed
 			targetVelocity.x = targetVelocity.x + (targetDir.x * accelDelta) # ]
 			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]
-			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's current velocity
+			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's target velocity
 	
 	# finally, we apply everything we calculated onto the player.
 	var force:Vector3
@@ -405,6 +430,7 @@ func _swimming_locomotion(delta:float) -> void:
 	return
 
 func _swimming_hover(delta:float) -> void:
+	## raycast hover with step-down behaviour removed (because the player doesn't want to stick to the floor while they're swimming)
 	var force:Vector3
 	force.x = 0
 	force.y = max(physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta),0)
@@ -413,11 +439,13 @@ func _swimming_hover(delta:float) -> void:
 	return
 
 func _swimming_clamber(delta:float) -> void:
+	## clamber up to dry ground near the surface of a body of water
 	#var clamberableSurface:bool = false
+	#var just_entered_water:bool = false
 	#
 	# some bullshit involving `PhysicsServer3D.body_test_motion`
 	#
-	#if clamberableSurface:
+	#if clamberableSurface and just_entered_water:
 	#	var force:Vector3
 	#	force.x = 0
 	#	force.y = 0
@@ -428,6 +456,7 @@ func _swimming_clamber(delta:float) -> void:
 ### NOCLIP ##############################################################################################################################
 
 func _noclip_locomotion(delta:float) -> void:
+	## general non-specialized noclip locomotion
 	
 	# first, determine the direction the player is attempting to move
 	var targetDir:Vector3
@@ -465,8 +494,8 @@ func _noclip_locomotion(delta:float) -> void:
 		var newSpd:float = max(currentSpd - decelDelta, 0.0) # calculate the player's new speed after applying the delta to their current speed.
 		var newSpdCoef:float = newSpd/currentSpd # convert the new speed to a coefficient to skip needing to figure out the player's current heading.
 		targetVelocity.x = targetVelocity.x * newSpdCoef # ]
-		targetVelocity.y = targetVelocity.y * newSpdCoef # ]
-		targetVelocity.z = targetVelocity.z * newSpdCoef # ]--- apply the new speed to the player's current velocity
+		targetVelocity.y = targetVelocity.y * newSpdCoef # ]--- apply the new speed to the player's target velocity
+		targetVelocity.z = targetVelocity.z * newSpdCoef # ]
 	
 	# locomotion
 	if targetDir != Vector3(0,0,0) and physBaseNoclipAccelCoef > 0: # only apply acceleration if the player is trying to move and can move.
@@ -476,8 +505,8 @@ func _noclip_locomotion(delta:float) -> void:
 			var baseAccelDelta:float = physBaseNoclipSpeed * physBaseNoclipAccelCoef * min(targetMoveSpeedCoef,1.0) * delta # determine how much the player's speed could change from acceleration this frame
 			var accelDelta:float = min(baseAccelDelta, requiredSpd) # cap the delta if it would cause the player to exceed their target speed
 			targetVelocity.x = targetVelocity.x + (targetDir.x * accelDelta) # ]
-			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]
-			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's current velocity
+			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]--- apply the new speed to the player's target velocity
+			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]
 	
 	# finally, we apply everything we calculated onto the player.
 	var force:Vector3
@@ -491,6 +520,8 @@ func _noclip_locomotion(delta:float) -> void:
 ### SHARED FUNCTIONS ####################################################################################################################
 
 func _update_rays() -> void:
+	## update data concerning legRays
+	
 	var minHeight:float = 1
 	var maxHeight:float = 0
 	var avgHeight:float = 0
@@ -510,7 +541,7 @@ func _update_rays() -> void:
 	legRays["longest ray"] = maxHeight
 	legRays["average height"] = avgHeight
 	legRays["average normal"] = avgNormal
-	#print(snapped(legRays["shortest ray"],0.01))
+	legRays["virtual normal"] = _get_virtual_normal()
 	return
 
 func _is_on_floor() -> bool:
@@ -529,6 +560,10 @@ func _is_in_water() -> bool:
 	return false
 
 func _get_virtual_normal() -> Vector3:
+	## the "virtual normal" is the approximated slope beneath the player calculated using data gathered from the collisions
+	## captured by the player's ring of "legRay" raycasts. this is useful because it means uneven or otherwise non-planar surfaces
+	## can be still treated as planar. this means things like stairs can now be automatically treated like a ramp, as though you
+	## manually placed an invisible ramp there in the map editor.
 	
 	# first, gather each valid collision point into a new array
 	var points:Array[Vector3] = []
