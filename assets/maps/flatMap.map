@@ -3,53 +3,44 @@
 // entity 0
 {
 "classname" "worldspawn"
-"_tb_textures" "textures/dev textures"
+"_tb_textures" "textures/dev textures;textures/special"
 // brush 0
-{
-( -3072 0 -256 ) ( -3072 1 -256 ) ( -3072 0 -255 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
-( -256 -3072 -256 ) ( -256 -3072 -255 ) ( -255 -3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
-( -256 0 -256 ) ( -255 0 -256 ) ( -256 1 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
-( 0 256 0 ) ( 0 257 0 ) ( 1 256 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
-( 0 3072 0 ) ( 1 3072 0 ) ( 0 3072 1 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
-( 3072 256 0 ) ( 3072 256 1 ) ( 3072 257 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
-}
-// brush 1
 {
 ( 512 -768 0 ) ( 512 -767 0 ) ( 512 -768 1 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 512 -768 0 ) ( 512 -768 1 ) ( 513 -768 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 512 -768 0 ) ( 513 -768 0 ) ( 512 -767 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
-( 768 -512 256 ) ( 768 -511 256 ) ( 769 -512 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( 768 -512 576 ) ( 768 -511 576 ) ( 769 -512 576 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 768 -512 256 ) ( 769 -512 256 ) ( 768 -512 257 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 768 -512 256 ) ( 768 -512 257 ) ( 768 -511 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 }
-// brush 2
+// brush 1
 {
 ( -768 -768 0 ) ( -768 -767 0 ) ( -768 -768 1 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -768 -768 0 ) ( -768 -768 1 ) ( -767 -768 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -768 -768 0 ) ( -767 -768 0 ) ( -768 -767 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
-( -512 -512 256 ) ( -512 -511 256 ) ( -511 -512 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -512 -512 576 ) ( -512 -511 576 ) ( -511 -512 576 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -512 -512 256 ) ( -511 -512 256 ) ( -512 -512 257 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -512 -512 256 ) ( -512 -512 257 ) ( -512 -511 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 }
-// brush 3
+// brush 2
 {
 ( -768 512 0 ) ( -768 513 0 ) ( -768 512 1 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -768 512 0 ) ( -768 512 1 ) ( -767 512 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -768 512 0 ) ( -767 512 0 ) ( -768 513 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
-( -512 768 256 ) ( -512 769 256 ) ( -511 768 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( -512 768 576 ) ( -512 769 576 ) ( -511 768 576 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -512 768 256 ) ( -511 768 256 ) ( -512 768 257 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( -512 768 256 ) ( -512 768 257 ) ( -512 769 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 }
-// brush 4
+// brush 3
 {
 ( 512 512 0 ) ( 512 513 0 ) ( 512 512 1 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 512 512 0 ) ( 512 512 1 ) ( 513 512 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 512 512 0 ) ( 513 512 0 ) ( 512 513 0 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
-( 768 768 256 ) ( 768 769 256 ) ( 769 768 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
+( 768 768 576 ) ( 768 769 576 ) ( 769 768 576 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 768 768 256 ) ( 769 768 256 ) ( 768 768 257 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 ( 768 768 256 ) ( 768 768 257 ) ( 768 769 256 ) "dev textures/dev_measurewall01a" 0 0 0 0.25 0.25
 }
-// brush 5
+// brush 4
 {
 ( -348 568 0 ) ( -348 569 0 ) ( -348 568 1 ) "dev textures/dev_measuregeneric01blu" 0 0 0 1 1
 ( -348 568 0 ) ( -348 568 1 ) ( -347 568 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 1 1
@@ -58,7 +49,7 @@
 ( -340 576 4 ) ( -339 576 4 ) ( -340 576 5 ) "dev textures/dev_measuregeneric01blu" 0 0 0 1 1
 ( -340 576 4 ) ( -340 576 5 ) ( -340 577 4 ) "dev textures/dev_measuregeneric01blu" 0 0 0 1 1
 }
-// brush 6
+// brush 5
 {
 ( -328 576 0 ) ( -328 577 0 ) ( -328 576 1 ) "dev textures/dev_measuregeneric01blu" -8 0 0 1 1
 ( -328 576 0 ) ( -328 576 1 ) ( -327 576 0 ) "dev textures/dev_measuregeneric01blu" -20 0 0 1 1
@@ -67,7 +58,7 @@
 ( -320 584 4 ) ( -319 584 4 ) ( -320 584 5 ) "dev textures/dev_measuregeneric01blu" -20 0 0 1 1
 ( -320 584 4 ) ( -320 584 5 ) ( -320 585 4 ) "dev textures/dev_measuregeneric01blu" -8 0 0 1 1
 }
-// brush 7
+// brush 6
 {
 ( -340 580 0 ) ( -340 581 0 ) ( -340 580 1 ) "dev textures/dev_measuregeneric01blu" -12 0 0 1 1
 ( -340 580 0 ) ( -340 580 1 ) ( -339 580 0 ) "dev textures/dev_measuregeneric01blu" -8 0 0 1 1
@@ -76,7 +67,7 @@
 ( -332 588 4 ) ( -331 588 4 ) ( -332 588 5 ) "dev textures/dev_measuregeneric01blu" -8 0 0 1 1
 ( -332 588 4 ) ( -332 588 5 ) ( -332 589 4 ) "dev textures/dev_measuregeneric01blu" -12 0 0 1 1
 }
-// brush 8
+// brush 7
 {
 ( -360 608 0 ) ( -360 609 0 ) ( -360 608 1 ) "dev textures/dev_measuregeneric01blu" -40 0 0 1 1
 ( -360 608 0 ) ( -360 608 1 ) ( -359 608 0 ) "dev textures/dev_measuregeneric01blu" 12 0 0 1 1
@@ -85,7 +76,7 @@
 ( -352 616 4 ) ( -351 616 4 ) ( -352 616 5 ) "dev textures/dev_measuregeneric01blu" 12 0 0 1 1
 ( -352 616 4 ) ( -352 616 5 ) ( -352 617 4 ) "dev textures/dev_measuregeneric01blu" -40 0 0 1 1
 }
-// brush 9
+// brush 8
 {
 ( -372 584 0 ) ( -372 585 0 ) ( -372 584 1 ) "dev textures/dev_measuregeneric01blu" -16 0 0 1 1
 ( -372 584 0 ) ( -372 584 1 ) ( -371 584 0 ) "dev textures/dev_measuregeneric01blu" 24 0 0 1 1
@@ -94,7 +85,7 @@
 ( -364 592 4 ) ( -363 592 4 ) ( -364 592 5 ) "dev textures/dev_measuregeneric01blu" 24 0 0 1 1
 ( -364 592 4 ) ( -364 592 5 ) ( -364 593 4 ) "dev textures/dev_measuregeneric01blu" -16 0 0 1 1
 }
-// brush 10
+// brush 9
 {
 ( -344 600 0 ) ( -344 601 0 ) ( -344 600 1 ) "dev textures/dev_measuregeneric01blu" -32 0 0 1 1
 ( -344 600 0 ) ( -344 600 1 ) ( -343 600 0 ) "dev textures/dev_measuregeneric01blu" -4 0 0 1 1
@@ -103,7 +94,7 @@
 ( -336 608 4 ) ( -335 608 4 ) ( -336 608 5 ) "dev textures/dev_measuregeneric01blu" -4 0 0 1 1
 ( -336 608 4 ) ( -336 608 5 ) ( -336 609 4 ) "dev textures/dev_measuregeneric01blu" -32 0 0 1 1
 }
-// brush 11
+// brush 10
 {
 ( -344 644 0 ) ( -344 645 0 ) ( -344 644 1 ) "dev textures/dev_measuregeneric01blu" -76 0 0 1 1
 ( -344 644 0 ) ( -344 644 1 ) ( -343 644 0 ) "dev textures/dev_measuregeneric01blu" -4 0 0 1 1
@@ -112,7 +103,7 @@
 ( -336 652 4 ) ( -335 652 4 ) ( -336 652 5 ) "dev textures/dev_measuregeneric01blu" -4 0 0 1 1
 ( -336 652 4 ) ( -336 652 5 ) ( -336 653 4 ) "dev textures/dev_measuregeneric01blu" -76 0 0 1 1
 }
-// brush 12
+// brush 11
 {
 ( -336 620 0 ) ( -336 621 0 ) ( -336 620 1 ) "dev textures/dev_measuregeneric01blu" -52 0 0 1 1
 ( -336 620 0 ) ( -336 620 1 ) ( -335 620 0 ) "dev textures/dev_measuregeneric01blu" -12 0 0 1 1
@@ -121,7 +112,7 @@
 ( -328 628 4 ) ( -327 628 4 ) ( -328 628 5 ) "dev textures/dev_measuregeneric01blu" -12 0 0 1 1
 ( -328 628 4 ) ( -328 628 5 ) ( -328 629 4 ) "dev textures/dev_measuregeneric01blu" -52 0 0 1 1
 }
-// brush 13
+// brush 12
 {
 ( -372 624 0 ) ( -372 625 0 ) ( -372 624 1 ) "dev textures/dev_measuregeneric01blu" -56 0 0 1 1
 ( -372 624 0 ) ( -372 624 1 ) ( -371 624 0 ) "dev textures/dev_measuregeneric01blu" 24 0 0 1 1
@@ -130,7 +121,7 @@
 ( -364 632 4 ) ( -363 632 4 ) ( -364 632 5 ) "dev textures/dev_measuregeneric01blu" 24 0 0 1 1
 ( -364 632 4 ) ( -364 632 5 ) ( -364 633 4 ) "dev textures/dev_measuregeneric01blu" -56 0 0 1 1
 }
-// brush 14
+// brush 13
 {
 ( -356 584 0 ) ( -356 585 0 ) ( -356 584 1 ) "dev textures/dev_measuregeneric01blu" -16 0 0 1 1
 ( -356 584 0 ) ( -356 584 1 ) ( -355 584 0 ) "dev textures/dev_measuregeneric01blu" 8 0 0 1 1
@@ -139,7 +130,7 @@
 ( -348 592 4 ) ( -347 592 4 ) ( -348 592 5 ) "dev textures/dev_measuregeneric01blu" 8 0 0 1 1
 ( -348 592 4 ) ( -348 592 5 ) ( -348 593 4 ) "dev textures/dev_measuregeneric01blu" -16 0 0 1 1
 }
-// brush 15
+// brush 14
 {
 ( -364 564 0 ) ( -364 565 0 ) ( -364 564 1 ) "dev textures/dev_measuregeneric01blu" 4 0 0 1 1
 ( -364 564 0 ) ( -364 564 1 ) ( -363 564 0 ) "dev textures/dev_measuregeneric01blu" 16 0 0 1 1
@@ -148,7 +139,7 @@
 ( -356 572 4 ) ( -355 572 4 ) ( -356 572 5 ) "dev textures/dev_measuregeneric01blu" 16 0 0 1 1
 ( -356 572 4 ) ( -356 572 5 ) ( -356 573 4 ) "dev textures/dev_measuregeneric01blu" 4 0 0 1 1
 }
-// brush 16
+// brush 15
 {
 ( -340 548 0 ) ( -340 549 0 ) ( -340 548 1 ) "dev textures/dev_measuregeneric01blu" 20 0 0 1 1
 ( -340 548 0 ) ( -340 548 1 ) ( -339 548 0 ) "dev textures/dev_measuregeneric01blu" -8 0 0 1 1
@@ -157,7 +148,7 @@
 ( -332 556 4 ) ( -331 556 4 ) ( -332 556 5 ) "dev textures/dev_measuregeneric01blu" -8 0 0 1 1
 ( -332 556 4 ) ( -332 556 5 ) ( -332 557 4 ) "dev textures/dev_measuregeneric01blu" 20 0 0 1 1
 }
-// brush 17
+// brush 16
 {
 ( -328 560 0 ) ( -328 561 0 ) ( -328 560 1 ) "dev textures/dev_measuregeneric01blu" 8 0 0 1 1
 ( -328 560 0 ) ( -328 560 1 ) ( -327 560 0 ) "dev textures/dev_measuregeneric01blu" -20 0 0 1 1
@@ -166,7 +157,7 @@
 ( -320 568 4 ) ( -319 568 4 ) ( -320 568 5 ) "dev textures/dev_measuregeneric01blu" -20 0 0 1 1
 ( -320 568 4 ) ( -320 568 5 ) ( -320 569 4 ) "dev textures/dev_measuregeneric01blu" 8 0 0 1 1
 }
-// brush 18
+// brush 17
 {
 ( -372 548 0 ) ( -372 549 0 ) ( -372 548 1 ) "dev textures/dev_measuregeneric01blu" 20 0 0 1 1
 ( -372 548 0 ) ( -372 548 1 ) ( -371 548 0 ) "dev textures/dev_measuregeneric01blu" 24 0 0 1 1
@@ -175,7 +166,7 @@
 ( -364 556 4 ) ( -363 556 4 ) ( -364 556 5 ) "dev textures/dev_measuregeneric01blu" 24 0 0 1 1
 ( -364 556 4 ) ( -364 556 5 ) ( -364 557 4 ) "dev textures/dev_measuregeneric01blu" 20 0 0 1 1
 }
-// brush 19
+// brush 18
 {
 ( -388 568 0 ) ( -388 569 0 ) ( -388 568 1 ) "dev textures/dev_measuregeneric01blu" 0 0 0 1 1
 ( -388 568 0 ) ( -388 568 1 ) ( -387 568 0 ) "dev textures/dev_measuregeneric01blu" 40 0 0 1 1
@@ -184,7 +175,7 @@
 ( -380 576 4 ) ( -379 576 4 ) ( -380 576 5 ) "dev textures/dev_measuregeneric01blu" 40 0 0 1 1
 ( -380 576 4 ) ( -380 576 5 ) ( -380 577 4 ) "dev textures/dev_measuregeneric01blu" 0 0 0 1 1
 }
-// brush 20
+// brush 19
 {
 ( -388 596 0 ) ( -388 597 0 ) ( -388 596 1 ) "dev textures/dev_measuregeneric01blu" -28 0 0 1 1
 ( -388 596 0 ) ( -388 596 1 ) ( -387 596 0 ) "dev textures/dev_measuregeneric01blu" 40 0 0 1 1
@@ -193,7 +184,7 @@
 ( -380 604 4 ) ( -379 604 4 ) ( -380 604 5 ) "dev textures/dev_measuregeneric01blu" 40 0 0 1 1
 ( -380 604 4 ) ( -380 604 5 ) ( -380 605 4 ) "dev textures/dev_measuregeneric01blu" -28 0 0 1 1
 }
-// brush 21
+// brush 20
 {
 ( -376 612 0 ) ( -376 613 0 ) ( -376 612 1 ) "dev textures/dev_measuregeneric01blu" -44 0 0 1 1
 ( -376 612 0 ) ( -376 612 1 ) ( -375 612 0 ) "dev textures/dev_measuregeneric01blu" 28 0 0 1 1
@@ -202,7 +193,7 @@
 ( -368 620 4 ) ( -367 620 4 ) ( -368 620 5 ) "dev textures/dev_measuregeneric01blu" 28 0 0 1 1
 ( -368 620 4 ) ( -368 620 5 ) ( -368 621 4 ) "dev textures/dev_measuregeneric01blu" -44 0 0 1 1
 }
-// brush 22
+// brush 21
 {
 ( -356 588 4 ) ( -356 589 4 ) ( -356 588 5 ) "dev textures/dev_measuregeneric01blu" -20 4 0 1 1
 ( -356 588 4 ) ( -356 588 5 ) ( -355 588 4 ) "dev textures/dev_measuregeneric01blu" 8 4 0 1 1
@@ -211,7 +202,7 @@
 ( -348 596 8 ) ( -347 596 8 ) ( -348 596 9 ) "dev textures/dev_measuregeneric01blu" 8 4 0 1 1
 ( -348 596 8 ) ( -348 596 9 ) ( -348 597 8 ) "dev textures/dev_measuregeneric01blu" -20 4 0 1 1
 }
-// brush 23
+// brush 22
 {
 ( -360 604 4 ) ( -360 605 4 ) ( -360 604 5 ) "dev textures/dev_measuregeneric01blu" -36 4 0 1 1
 ( -360 604 4 ) ( -360 604 5 ) ( -359 604 4 ) "dev textures/dev_measuregeneric01blu" 12 4 0 1 1
@@ -220,7 +211,7 @@
 ( -352 612 8 ) ( -351 612 8 ) ( -352 612 9 ) "dev textures/dev_measuregeneric01blu" 12 4 0 1 1
 ( -352 612 8 ) ( -352 612 9 ) ( -352 613 8 ) "dev textures/dev_measuregeneric01blu" -36 4 0 1 1
 }
-// brush 24
+// brush 23
 {
 ( -128 512 0 ) ( -128 513 0 ) ( -128 512 1 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -128 512 0 ) ( -128 512 1 ) ( -127 512 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -229,7 +220,7 @@
 ( 128 768 256 ) ( 129 768 256 ) ( 128 768 257 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 128 768 256 ) ( 128 768 257 ) ( 128 769 256 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 25
+// brush 24
 {
 ( -112 528 16 ) ( -112 529 16 ) ( -112 528 17 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -112 528 16 ) ( -112 528 17 ) ( -111 528 16 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -238,7 +229,7 @@
 ( 112 752 32 ) ( 113 752 32 ) ( 112 752 33 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 112 752 32 ) ( 112 752 33 ) ( 112 753 32 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 26
+// brush 25
 {
 ( -96 544 32 ) ( -96 545 32 ) ( -96 544 33 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -96 544 32 ) ( -96 544 33 ) ( -95 544 32 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -247,7 +238,7 @@
 ( 80 736 48 ) ( 81 736 48 ) ( 80 736 49 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 96 736 48 ) ( 96 736 49 ) ( 96 737 48 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 27
+// brush 26
 {
 ( -80 560 48 ) ( -80 561 48 ) ( -80 560 49 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -80 560 48 ) ( -80 560 49 ) ( -79 560 48 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -256,7 +247,7 @@
 ( 64 720 64 ) ( 65 720 64 ) ( 64 720 65 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 80 720 64 ) ( 80 720 65 ) ( 80 721 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 28
+// brush 27
 {
 ( -64 560 48 ) ( -64 561 48 ) ( -64 560 49 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -80 576 48 ) ( -80 576 49 ) ( -79 576 48 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -265,7 +256,7 @@
 ( 64 704 64 ) ( 65 704 64 ) ( 64 704 65 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 64 720 64 ) ( 64 720 65 ) ( 64 721 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 29
+// brush 28
 {
 ( -48 560 48 ) ( -48 561 48 ) ( -48 560 49 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -80 592 48 ) ( -80 592 49 ) ( -79 592 48 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -274,7 +265,7 @@
 ( 64 688 64 ) ( 65 688 64 ) ( 64 688 65 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 48 720 64 ) ( 48 720 65 ) ( 48 721 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 30
+// brush 29
 {
 ( -32 560 48 ) ( -32 561 48 ) ( -32 560 49 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -80 608 48 ) ( -80 608 49 ) ( -79 608 48 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -283,7 +274,7 @@
 ( 64 672 64 ) ( 65 672 64 ) ( 64 672 65 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 32 720 64 ) ( 32 720 65 ) ( 32 721 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 31
+// brush 30
 {
 ( 464 640 128 ) ( 464 640 64 ) ( 464 768 128 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 464 640 128 ) ( 512 640 128 ) ( 512 640 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -291,7 +282,7 @@
 ( 512 640 64 ) ( 512 768 128 ) ( 464 768 128 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 512 640 128 ) ( 512 768 128 ) ( 512 640 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 32
+// brush 31
 {
 ( 464 640 64 ) ( 464 640 128 ) ( 464 512 128 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 512 512 128 ) ( 512 640 64 ) ( 464 640 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -299,7 +290,7 @@
 ( 512 640 64 ) ( 512 640 128 ) ( 464 640 128 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 512 512 128 ) ( 512 640 128 ) ( 512 640 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 33
+// brush 32
 {
 ( -32 1072 112 ) ( -144 896 0 ) ( -144 1184 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 144 896 0 ) ( -32 1008 112 ) ( 32 1008 112 ) "dev textures/dev_measuregeneric01blu" 0 -64 0 0.25 0.25
@@ -308,7 +299,7 @@
 ( -32 1072 112 ) ( 144 1184 0 ) ( 32 1072 112 ) "dev textures/dev_measuregeneric01blu" 0 -64 0 0.25 0.25
 ( 144 1184 0 ) ( 32 1008 112 ) ( 32 1072 112 ) "dev textures/dev_measuregeneric01blu" 0 -64 0 0.25 0.25
 }
-// brush 34
+// brush 33
 {
 ( -416 896 0 ) ( -416 897 0 ) ( -416 896 1 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -416 896 0 ) ( -416 896 1 ) ( -415 896 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -317,7 +308,7 @@
 ( -288 912 16 ) ( -287 912 16 ) ( -288 912 17 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -288 912 16 ) ( -288 912 17 ) ( -288 913 16 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 35
+// brush 34
 {
 ( -416 960 0 ) ( -416 961 0 ) ( -416 960 1 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -416 960 0 ) ( -416 960 1 ) ( -415 960 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -326,7 +317,7 @@
 ( -288 976 16 ) ( -287 976 16 ) ( -288 976 17 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -288 976 16 ) ( -288 976 17 ) ( -288 977 16 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 36
+// brush 35
 {
 ( -416 1104 0 ) ( -416 1105 0 ) ( -416 1104 1 ) "dev textures/dev_measuregeneric01blu" -64 0 0 0.25 0.25
 ( -416 1104 0 ) ( -416 1104 1 ) ( -415 1104 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -335,7 +326,7 @@
 ( -288 1120 16 ) ( -287 1120 16 ) ( -288 1120 17 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -288 1120 16 ) ( -288 1120 17 ) ( -288 1121 16 ) "dev textures/dev_measuregeneric01blu" -64 0 0 0.25 0.25
 }
-// brush 37
+// brush 36
 {
 ( -416 1168 0 ) ( -416 1169 0 ) ( -416 1168 1 ) "dev textures/dev_measuregeneric01blu" -64 0 0 0.25 0.25
 ( -416 1168 0 ) ( -416 1168 1 ) ( -415 1168 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -344,7 +335,7 @@
 ( -288 1184 16 ) ( -287 1184 16 ) ( -288 1184 17 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -288 1184 16 ) ( -288 1184 17 ) ( -288 1185 16 ) "dev textures/dev_measuregeneric01blu" -64 0 0 0.25 0.25
 }
-// brush 38
+// brush 37
 {
 ( -128 1376 0 ) ( -128 1376 112 ) ( -128 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -128 1376 112 ) ( -64 1376 112 ) ( -64 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -352,7 +343,7 @@
 ( -64 1376 0 ) ( -64 1376 112 ) ( -128 1376 112 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -64 1312 0 ) ( -64 1376 112 ) ( -64 1376 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 39
+// brush 38
 {
 ( -64 1392 0 ) ( -64 1392 112 ) ( -64 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( -64 1392 112 ) ( 0 1392 112 ) ( 0 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -360,7 +351,7 @@
 ( 0 1392 0 ) ( 0 1392 112 ) ( -64 1392 112 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 0 1312 0 ) ( 0 1392 112 ) ( 0 1392 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 40
+// brush 39
 {
 ( 0 1408 0 ) ( 0 1408 112 ) ( 0 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 64 1312 0 ) ( 0 1312 0 ) ( 0 1408 112 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -368,7 +359,7 @@
 ( 64 1408 0 ) ( 64 1408 112 ) ( 0 1408 112 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 64 1312 0 ) ( 64 1408 112 ) ( 64 1408 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 41
+// brush 40
 {
 ( 64 1424 0 ) ( 64 1424 112 ) ( 64 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 64 1424 112 ) ( 128 1424 112 ) ( 128 1312 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -376,7 +367,7 @@
 ( 128 1424 0 ) ( 128 1424 112 ) ( 64 1424 112 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 128 1312 0 ) ( 128 1424 112 ) ( 128 1424 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 42
+// brush 41
 {
 ( 256 1472 0 ) ( 256 1472 608 ) ( 256 1312 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
 ( 320 1312 0 ) ( 256 1312 0 ) ( 256 1472 608 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
@@ -384,7 +375,7 @@
 ( 320 1472 0 ) ( 320 1472 608 ) ( 256 1472 608 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
 ( 320 1312 0 ) ( 320 1472 608 ) ( 320 1472 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
 }
-// brush 43
+// brush 42
 {
 ( 512 384 0 ) ( 1280 384 768 ) ( 1280 -384 768 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 512 -384 0 ) ( 1280 -384 768 ) ( 1280 -384 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -392,7 +383,7 @@
 ( 1280 384 0 ) ( 1280 384 768 ) ( 512 384 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 1280 -384 768 ) ( 1280 384 768 ) ( 1280 384 0 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 44
+// brush 43
 {
 ( 512 768 64 ) ( 512 769 64 ) ( 512 768 65 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 512 768 64 ) ( 512 768 65 ) ( 513 768 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -401,7 +392,7 @@
 ( 640 880 80 ) ( 641 880 80 ) ( 640 880 81 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 640 784 80 ) ( 640 784 81 ) ( 640 785 80 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 }
-// brush 45
+// brush 44
 {
 ( 640 768 48 ) ( 640 769 48 ) ( 640 768 49 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 640 768 48 ) ( 640 768 49 ) ( 641 768 48 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
@@ -409,5 +400,238 @@
 ( 768 784 64 ) ( 768 785 64 ) ( 769 784 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 768 880 64 ) ( 769 880 64 ) ( 768 880 65 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
 ( 768 784 64 ) ( 768 784 65 ) ( 768 785 64 ) "dev textures/dev_measuregeneric01blu" 0 0 0 0.25 0.25
+}
+// brush 45
+{
+( 368 3072 0 ) ( 368 -3072 0 ) ( 368 3072 -256 ) "dev textures/graygrid" 0 0 0 0.25 0.25
+( 3072 -3072 -256 ) ( 368 -3072 -256 ) ( 3072 -3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 3072 3072 -256 ) ( 368 3072 -256 ) ( 3072 -3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 3072 -3072 0 ) ( 368 -3072 0 ) ( 3072 3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 3072 3072 0 ) ( 368 3072 0 ) ( 3072 3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 3072 -3072 0 ) ( 3072 3072 0 ) ( 3072 -3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 46
+{
+( -3072 -3072 -256 ) ( -3072 3072 -256 ) ( -3072 -3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -3072 -3072 0 ) ( -368 -3072 0 ) ( -3072 -3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -3072 -3072 -256 ) ( -368 -3072 -256 ) ( -3072 3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -3072 3072 0 ) ( -368 3072 0 ) ( -3072 -3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -3072 3072 -256 ) ( -368 3072 -256 ) ( -3072 3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -368 -3072 -256 ) ( -368 -3072 0 ) ( -368 3072 -256 ) "dev textures/graygrid" 0 0 0 0.25 0.25
+}
+// brush 47
+{
+( -368 3072 0 ) ( -368 -528 0 ) ( -368 3072 -256 ) __TB_empty 0 0 0 1 1
+( 368 -528 0 ) ( 368 -528 -256 ) ( -368 -528 0 ) "dev textures/graygrid" 0 0 0 0.25 0.25
+( -368 3072 -256 ) ( -368 -528 -256 ) ( 368 3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 3072 0 ) ( 368 -528 0 ) ( -368 3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 3072 0 ) ( -368 3072 0 ) ( 368 3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 3072 -256 ) ( 368 -528 -256 ) ( 368 3072 0 ) __TB_empty 0 0 0 1 1
+}
+// brush 48
+{
+( -368 -528 -256 ) ( -368 -528 -240 ) ( -368 -1712 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -368 -2096 -256 ) ( -368 -2096 -240 ) ( 368 -2096 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -368 -528 -256 ) ( -368 -1712 -256 ) ( 368 -528 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 -528 -240 ) ( 368 -1712 -240 ) ( -368 -528 -240 ) "dev textures/graygrid" 0 0 0 0.25 0.25
+( 368 -528 -256 ) ( 368 -528 -240 ) ( -368 -528 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 -1712 -256 ) ( 368 -1712 -240 ) ( 368 -528 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 49
+{
+( 368 -512 16 ) ( 368 -1728 16 ) ( 368 -512 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 384 -2112 0 ) ( 368 -2112 0 ) ( 384 -2112 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 384 -512 0 ) ( 368 -512 0 ) ( 384 -1728 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 384 -1728 16 ) ( 368 -1728 16 ) ( 384 -512 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 384 -512 16 ) ( 368 -512 16 ) ( 384 -512 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 384 -1728 16 ) ( 384 -512 16 ) ( 384 -1728 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+}
+// brush 50
+{
+( -384 -1728 0 ) ( -384 -512 0 ) ( -384 -1728 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -384 -2112 16 ) ( -368 -2112 16 ) ( -384 -2112 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -384 -1728 0 ) ( -368 -1728 0 ) ( -384 -512 0 ) __TB_empty 0 0 0 1 1
+( -384 -512 16 ) ( -368 -512 16 ) ( -384 -1728 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -384 -512 0 ) ( -368 -512 0 ) ( -384 -512 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -368 -1728 0 ) ( -368 -1728 16 ) ( -368 -512 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+}
+// brush 51
+{
+( -368 -512 16 ) ( -368 -528 16 ) ( -368 -512 0 ) __TB_empty 0 0 0 1 1
+( 368 -528 16 ) ( 368 -528 0 ) ( -368 -528 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -368 -512 0 ) ( -368 -528 0 ) ( 368 -512 0 ) __TB_empty 0 0 0 1 1
+( 368 -512 16 ) ( 368 -528 16 ) ( -368 -512 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 368 -512 16 ) ( -368 -512 16 ) ( 368 -512 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 368 -512 0 ) ( 368 -528 0 ) ( 368 -512 16 ) __TB_empty 0 0 0 1 1
+}
+// brush 52
+{
+( -368 -3072 -256 ) ( -368 -2096 -256 ) ( -368 -3072 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+( -368 -3072 0 ) ( 368 -3072 0 ) ( -368 -3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 -3072 -256 ) ( 368 -2096 -256 ) ( -368 -3072 -256 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -368 -3072 0 ) ( -368 -2096 0 ) ( 368 -3072 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 368 -2096 -256 ) ( 368 -2096 0 ) ( -368 -2096 -256 ) "dev textures/graygrid" 0 0 0 0.25 0.25
+( 368 -3072 0 ) ( 368 -2096 0 ) ( 368 -3072 -256 ) "dev textures/dev_measuregeneric01red" 0 0 0 1 1
+}
+// brush 53
+{
+( -368 -2112 0 ) ( -368 -2111 0 ) ( -368 -2112 1 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+( -368 -2112 0 ) ( -368 -2112 1 ) ( -367 -2112 0 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -368 -2112 0 ) ( -367 -2112 0 ) ( -368 -2111 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+( 368 -2096 16 ) ( 368 -2095 16 ) ( 369 -2096 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 368 -2096 16 ) ( 369 -2096 16 ) ( 368 -2096 17 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 368 -2096 16 ) ( 368 -2096 17 ) ( 368 -2095 16 ) "dev textures/dev_measuregeneric01b" 0 0 0 1 1
+}
+// brush 54
+{
+( -368 -2096 16 ) ( -368 -2096 -240 ) ( -368 -1472 -240 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -368 -2096 16 ) ( 368 -2096 16 ) ( 368 -2096 -240 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 368 -2096 -240 ) ( 368 -1472 -240 ) ( -368 -1472 -240 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( -368 -1472 -240 ) ( 368 -1472 -240 ) ( 368 -2096 16 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+( 368 -2096 16 ) ( 368 -1472 -240 ) ( 368 -2096 -240 ) "dev textures/dev_measuregeneric01red" 0 0 0 0.25 0.25
+}
+// brush 55
+{
+( -832 -768 176 ) ( -832 -767 175.25 ) ( -832 -768 177 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -832 -768 176 ) ( -832 -768 177 ) ( -831 -768 176 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -832 -768 176 ) ( -831 -768 176 ) ( -832 -767 175.25 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -512 0 ) ( -768 -511 -0.75 ) ( -767 -512 0 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -512 0 ) ( -767 -512 0 ) ( -768 -512 1 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -512 0 ) ( -768 -512 1 ) ( -768 -511 -0.75 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 56
+{
+( -832 -832 176 ) ( -832 -831 176 ) ( -832 -832 177 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -832 -832 176 ) ( -832 -832 177 ) ( -831 -832 176 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -832 -832 176 ) ( -831 -832 176 ) ( -832 -831 176 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -768 192 ) ( -768 -767 192 ) ( -767 -768 192 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -768 192 ) ( -767 -768 192 ) ( -768 -768 193 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -768 192 ) ( -768 -768 193 ) ( -768 -767 192 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 57
+{
+( -768 -768 192 ) ( -768 -767 192 ) ( -768 -768 193 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -768 192 ) ( -769 -768 191.25 ) ( -768 -767 192 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 368 ) ( -513 -832 367.25 ) ( -512 -832 369 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -768 192 ) ( -768 -768 193 ) ( -769 -768 191.25 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 368 ) ( -512 -831 368 ) ( -513 -832 367.25 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 368 ) ( -512 -832 369 ) ( -512 -831 368 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 58
+{
+( -512 -832 368 ) ( -512 -831 368 ) ( -512 -832 369 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 368 ) ( -512 -832 369 ) ( -511 -832 368 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 368 ) ( -511 -832 368 ) ( -512 -831 368 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -768 384 ) ( -448 -767 384 ) ( -447 -768 384 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -768 384 ) ( -447 -768 384 ) ( -448 -768 385 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -768 384 ) ( -448 -768 385 ) ( -448 -767 384 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 59
+{
+( -512 -768 384 ) ( -512 -768 385 ) ( -512 -769 383.25 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -768 384 ) ( -513 -768 384 ) ( -512 -768 385 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -768 384 ) ( -512 -769 383.25 ) ( -513 -768 384 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -512 560 ) ( -449 -512 560 ) ( -448 -513 559.25 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -512 560 ) ( -448 -512 561 ) ( -449 -512 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -512 560 ) ( -448 -513 559.25 ) ( -448 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 60
+{
+( -768 -512 560 ) ( -768 -511 560 ) ( -768 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -512 560 ) ( -512 -512 561 ) ( -511 -512 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -512 560 ) ( -511 -512 560 ) ( -512 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -448 -447 576 ) ( -447 -448 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -447 -448 576 ) ( -448 -448 577 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -448 -448 577 ) ( -448 -447 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 61
+{
+( -832 -512 560 ) ( -832 -511 560 ) ( -832 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -768 560 ) ( -512 -768 561 ) ( -511 -768 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -512 560 ) ( -511 -512 560 ) ( -512 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -448 -447 576 ) ( -447 -448 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 832 576 ) ( -447 832 576 ) ( -448 832 577 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -768 -512 560 ) ( -768 -512 561 ) ( -768 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 62
+{
+( -832 -512 560 ) ( -832 -511 560 ) ( -832 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 560 ) ( -512 -832 561 ) ( -511 -832 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -512 560 ) ( -511 -512 560 ) ( -512 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -448 -447 576 ) ( -447 -448 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -768 560 ) ( -511 -768 560 ) ( -512 -768 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 -512 560 ) ( 768 -512 561 ) ( 768 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 63
+{
+( 768 -512 560 ) ( 768 -511 560 ) ( 768 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -832 560 ) ( -512 -832 561 ) ( -511 -832 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -512 560 ) ( -511 -512 560 ) ( -512 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -448 -447 576 ) ( -447 -448 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 768 560 ) ( -511 768 560 ) ( -512 768 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 832 -512 560 ) ( 832 -512 561 ) ( 832 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 64
+{
+( -768 -512 560 ) ( -768 -511 560 ) ( -768 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 768 560 ) ( -512 768 561 ) ( -511 768 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 -512 560 ) ( -511 -512 560 ) ( -512 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 -448 576 ) ( -448 -447 576 ) ( -447 -448 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 832 560 ) ( -511 832 560 ) ( -512 832 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 832 -512 560 ) ( 832 -512 561 ) ( 832 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 65
+{
+( -768 448 560 ) ( -768 449 560 ) ( -768 448 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 448 560 ) ( -512 448 561 ) ( -511 448 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 448 560 ) ( -511 448 560 ) ( -512 449 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 512 576 ) ( -448 513 576 ) ( -447 512 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 512 576 ) ( -447 512 576 ) ( -448 512 577 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 512 576 ) ( -448 512 577 ) ( -448 513 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 66
+{
+( 448 448 560 ) ( 448 449 560 ) ( 448 448 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 448 560 ) ( 704 448 561 ) ( 705 448 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 448 560 ) ( 705 448 560 ) ( 704 449 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 512 576 ) ( 768 513 576 ) ( 769 512 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 512 576 ) ( 769 512 576 ) ( 768 512 577 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 512 576 ) ( 768 512 577 ) ( 768 513 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 67
+{
+( 448 -512 560 ) ( 448 -511 560 ) ( 448 -512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 -512 560 ) ( 704 -512 561 ) ( 705 -512 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 704 -512 560 ) ( 705 -512 560 ) ( 704 -511 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 -448 576 ) ( 768 -447 576 ) ( 769 -448 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 -448 576 ) ( 769 -448 576 ) ( 768 -448 577 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 768 -448 576 ) ( 768 -448 577 ) ( 768 -447 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 68
+{
+( 448 -768 560 ) ( 448 -767 560 ) ( 448 -768 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 448 -768 560 ) ( 448 -768 561 ) ( 449 -768 560 ) __TB_empty 0 0 0 1 1
+( 448 -768 560 ) ( 449 -768 560 ) ( 448 -767 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 -512 576 ) ( 512 -511 576 ) ( 513 -512 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 -512 576 ) ( 513 -512 576 ) ( 512 -512 577 ) __TB_empty 0 0 0 1 1
+( 512 -512 576 ) ( 512 -512 577 ) ( 512 -511 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 69
+{
+( 448 512 560 ) ( 448 513 560 ) ( 448 512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 448 512 560 ) ( 448 512 561 ) ( 449 512 560 ) __TB_empty 0 0 0 1 1
+( 448 512 560 ) ( 449 512 560 ) ( 448 513 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 768 576 ) ( 512 769 576 ) ( 513 768 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( 512 768 576 ) ( 513 768 576 ) ( 512 768 577 ) __TB_empty 0 0 0 1 1
+( 512 768 576 ) ( 512 768 577 ) ( 512 769 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+}
+// brush 70
+{
+( -512 512 560 ) ( -512 513 560 ) ( -512 512 561 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -512 512 560 ) ( -512 512 561 ) ( -511 512 560 ) __TB_empty 0 0 0 1 1
+( -512 512 560 ) ( -511 512 560 ) ( -512 513 560 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 768 576 ) ( -448 769 576 ) ( -447 768 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
+( -448 768 576 ) ( -447 768 576 ) ( -448 768 577 ) __TB_empty 0 0 0 1 1
+( -448 768 576 ) ( -448 768 577 ) ( -448 769 576 ) "dev textures/dev_measuregeneric01b" 0 0 0 0.25 0.25
 }
 }

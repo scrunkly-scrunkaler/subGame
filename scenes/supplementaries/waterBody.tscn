@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ba3ytmyc650df"]
+
+[ext_resource type="Shader" uid="uid://boglb3k35ffpp" path="res://shaders/stylized_water_surface.gdshader" id="1_6gtqw"]
+[ext_resource type="Script" uid="uid://cjiuh8xe87rga" path="res://scenes/supplementaries/waterMesh.gd" id="2_pfbjy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gtqw"]
+render_priority = 0
+shader = ExtResource("1_6gtqw")
+shader_parameter/GLOBAL_TIME = 0.0
+shader_parameter/max_depth = 10.0
+shader_parameter/underwater_fog_color = Color(0.019607844, 0.18039216, 0.2509804, 1)
+shader_parameter/fade_start_depth = 0.5
+shader_parameter/sea_height = 0.350000016625
+shader_parameter/sea_choppy = 2.000000095
+shader_parameter/sea_speed = 3.0000001425
+shader_parameter/sea_freq = 0.0400000019
+shader_parameter/ITER_GEOMETRY = 3
+shader_parameter/ITER_FRAGMENT = 5
+shader_parameter/refraction_strength = 1.0
+shader_parameter/refraction_distance_fade = 5.0
+shader_parameter/normal_epsilon = 0.01
+shader_parameter/normal_smoothness_dist = 50.0
+shader_parameter/base_tint_color = Color(0.11439999, 0.25272, 0.26, 1)
+shader_parameter/deep_color = Color(7.099286e-07, 0.21918595, 0.18390357, 1)
+shader_parameter/water_absorption = Color(0.3, 0.06, 0.02, 1)
+shader_parameter/roughness = 0.125
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/caustics_scale = 2.0
+shader_parameter/caustics_speed = 0.1
+shader_parameter/caustics_intensity = 0.8
+shader_parameter/caustics_depth_fade = 0.7
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/foam_depth_start = 0.8
+shader_parameter/foam_depth_end = 0.0
+shader_parameter/foam_noise_scale = 2.0
+shader_parameter/foam_noise_speed = 1.0
+shader_parameter/foam_cutoff = 0.7
+shader_parameter/foam_crest_threshold = 0.7
+shader_parameter/foam_crest_amount = 2.0
+shader_parameter/foam_edge_color = Color(0, 0, 0.05, 1)
+shader_parameter/foam_edge_offset = Vector2(0.02, 0.02)
+shader_parameter/voronoi_scale = 9.0
+shader_parameter/voronoi_strength = 0.8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3h85e"]
+material = SubResource("ShaderMaterial_6gtqw")
+size = Vector2(20, 40)
+subdivide_width = 64
+subdivide_depth = 128
+
+[node name="waterBody" type="Node3D" unique_id=288738715]
+
+[node name="waterMesh" type="MeshInstance3D" parent="." unique_id=3211238]
+unique_name_in_owner = true
+mesh = SubResource("PlaneMesh_3h85e")
+script = ExtResource("2_pfbjy")

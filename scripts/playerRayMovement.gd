@@ -28,8 +28,11 @@ var physBaseGroundSpeed:float = 5.72		# (def: 5.72) the base maximum speed the p
 var physBaseGroundAccelCoef:float = 10		# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while on the ground. Must be greater than decel value.
 var physBaseGroundDecelCoef:float = 6		# (def: 6.00) the base decelerative rate under which the player will stop moving while on the ground.
 var physBaseAirSpeed:float = 0.572			# (def: 0.572) the base maximum speed the player will accelerate to under their own power while in the air (in meters per second)
-var physBaseAirAccelCoef:float = 10			# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while in the air. Must be greater than decel value.
+var physBaseAirAccelCoef:float = 4			# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while in the air. Must be greater than decel value.
 var physBaseAirDecelCoef:float = 0			# (def: 0.00) the base decelerative rate under which the player will stop moving while in the air.
+var physBaseSwimSpeed:float = 4.00
+var physBaseSwimAccelCoef:float = 5
+var physBaseSwimDecelCoef:float = 5
 var physBaseNoclipSpeed:float = 16.0		# (def: 16.0) the base maximum speed the player will accelerate to under their own power while noclipping (in meters per second)
 var physBaseNoclipAccelCoef:float = 10		# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while noclipping. Must be greater than decel value.
 var physBaseNoclipDecelCoef:float = 6		# (def: 6.00) the base decelerative rate under which the player will stop moving while noclipping.
@@ -73,6 +76,7 @@ var inputCamY:Vector3 = Vector3(0,0,0)
 var inputCamZ:Vector3 = Vector3(0,0,0)
 
 ### intermediaries ###
+
 var legRays:Dictionary = {
 	"IDs":([]),
 	"shortest ray":1,
@@ -112,6 +116,8 @@ func _physics_process(delta:float) -> void:
 	_stance_handler(delta)
 	if inputNoclip:
 		_noclip_movement_handler(delta)
+	elif _is_in_water():
+		_swimming_movement_handler(delta)
 	elif _is_on_floor():
 		_grounded_movement_handler(delta)
 	else:
@@ -136,10 +142,15 @@ func _aerial_movement_handler(delta:float) -> void:
 	_aerial_locomotion(delta)
 	return
 
+func _swimming_movement_handler(delta:float) -> void:
+	_update_rays()
+	_swimming_hover(delta)
+	_swimming_locomotion(delta)
+	return
+
 func _noclip_movement_handler(delta:float) -> void:
 	%standHull.disabled = true
 	%crouchHull.disabled = true
-	jumping = true
 	time_since_last_jump = physJumpCooldownTime
 	_noclip_locomotion(delta)
 	return
@@ -272,6 +283,67 @@ func _aerial_locomotion(delta:float) -> void:
 	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
 	return
 
+### SWIMMING ############################################################################################################################
+
+func _swimming_locomotion(delta:float) -> void:
+	
+	# first, determine the direction the player is attempting to move
+	var targetDir:Vector3
+	targetDir.x = (inputMoveDir3D.z * inputCamZ.x) + (inputMoveDir3D.x * inputCamX.x) + (inputMoveDir3D.y * inputCamY.x)
+	targetDir.y = (inputMoveDir3D.z * inputCamZ.y) + (inputMoveDir3D.x * inputCamX.y) + (inputMoveDir3D.y * inputCamY.y)
+	targetDir.z = (inputMoveDir3D.z * inputCamZ.z) + (inputMoveDir3D.x * inputCamX.z) + (inputMoveDir3D.y * inputCamY.z)
+	
+	# then, determine the speed the player wants to move at (no crouch because that's how you descend in noclip)
+	var targetMoveSpeedCoef:float
+	if inputSprint:
+		targetMoveSpeedCoef = physSprintSpeedCoef
+	elif inputWalk:
+		targetMoveSpeedCoef = physWalkSpeedCoef
+	else:
+		targetMoveSpeedCoef = 1.0
+	
+	var targetSpd:float
+	targetSpd = targetMoveSpeedCoef * physBaseSwimSpeed
+	
+	# next, we handle acceleration (locomotion) and deceleration (friction)
+	var currentVelocity:Vector3
+	currentVelocity.x = self.linear_velocity.x
+	currentVelocity.y = self.linear_velocity.y
+	currentVelocity.z = self.linear_velocity.z
+	
+	var currentSpd:float
+	currentSpd = currentVelocity.length()
+		
+	var targetVelocity:Vector3
+	targetVelocity = currentVelocity
+	
+	# friction (may be skipped if physBaseAirDecelCoef = 0)
+	if currentSpd > 0 and physBaseSwimDecelCoef > 0: # only apply friction if the player is moving and friction is set
+		var decelDelta:float = currentSpd * physBaseSwimDecelCoef * delta # determine how much the player's speed could change from deceleration this frame.
+		var newSpd:float = max(currentSpd - decelDelta, 0.0) # calculate the player's new speed after applying the delta to their current speed.
+		var newSpdCoef:float = newSpd/currentSpd # convert the new speed to a coefficient to skip needing to figure out the player's current heading.
+		targetVelocity.x = targetVelocity.x * newSpdCoef # ]
+		targetVelocity.y = targetVelocity.y * newSpdCoef # ]
+		targetVelocity.z = targetVelocity.z * newSpdCoef # ]--- apply the new speed to the player's current velocity
+	
+	# locomotion
+	if targetDir != Vector3(0,0,0) and physBaseSwimAccelCoef > 0: # only apply acceleration if the player is trying to move and can move.
+		var relativeSpd:float = targetVelocity.dot(targetDir) # determine the player's current speed in relation to their desired heading
+		var requiredSpd:float = targetSpd - relativeSpd # determine how much speed would be required to reach the target speed this frame
+		if requiredSpd > 0: # only try to apply an accerlative force to the player if they're not already moving at or faster than their target speed.
+			var baseAccelDelta:float = physBaseSwimSpeed * physBaseSwimAccelCoef * min(targetMoveSpeedCoef,1.0) * delta # determine how much the player's speed could change from acceleration this frame
+			var accelDelta:float = min(baseAccelDelta, requiredSpd) # cap the delta if it would cause the player to exceed their target speed
+			targetVelocity.x = targetVelocity.x + (targetDir.x * accelDelta) # ]
+			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]
+			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's current velocity
+	
+	# finally, we apply everything we calculated onto the player.
+	var force:Vector3
+	force.x = (targetVelocity.x - currentVelocity.x) / delta                     # ]
+	force.y = ((targetVelocity.y - currentVelocity.y) / delta) + physBaseGravity * 1.5 # ]--- determine how much force is required to reach the target velocity from the player's current velocity this frame.
+	force.z = (targetVelocity.z - currentVelocity.z) / delta                     # ]
+	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
+
 ### NOCLIP ##############################################################################################################################
 
 func _noclip_locomotion(delta:float) -> void:
@@ -368,6 +440,14 @@ func _grounded_hover(delta:float) -> void:
 	self.apply_force(force * self.mass)
 	return
 
+func _swimming_hover(delta:float) -> void:
+	var force:Vector3
+	force.x = 0
+	force.y = max(physStepHeightPID.update(physStepTargetHeightCoef+physStepTargetHeightTrim,legRays["shortest ray"],delta),0)
+	force.z = 0
+	self.apply_force(force * self.mass)
+	return
+
 func _grounded_slope_repel(delta:float) -> void:
 	var force:Vector3 = Vector3(0,0,0)
 	for legRay:RayCast3D in legRays["IDs"]:
@@ -419,9 +499,15 @@ func _is_on_floor() -> bool:
 			return true
 	return false
 
+func _is_in_water() -> bool:
+	if %waterProbe.global_position.y > 0.5:
+		return false
+	return true
+
 func _get_virtual_normal() -> Vector3:
-	var points:Array[Vector3] = []
+	
 	# first, gather each valid collision point into a new array
+	var points:Array[Vector3] = []
 	for legRay:RayCast3D in legRays["IDs"]:
 		if legRay.is_colliding():
 			points.append(to_local(legRay.get_collision_point()))
@@ -464,7 +550,9 @@ func _get_virtual_normal() -> Vector3:
 
 func _stance_handler(delta:float) -> void:
 	
-	if inputCrouch:
+	if inputNoclip or _is_in_water():
+		crouching = false
+	elif inputCrouch:
 		crouching = true
 	elif _can_stand():
 		crouching = false
@@ -483,17 +571,19 @@ func _stance_cam_transitioner(delta:float) -> void:
 	var camStandingHeight = playerHeight * playerHeadEyesHeightCoef
 	var camCrouchAdjust = playerHeight - (playerHeight * playerCrouchHeightCoef)
 	var camCrouchingHeight = camStandingHeight - camCrouchAdjust
-	
 	if crouching:
 		%headYaw.position.y = utils.lerp_toward(%headYaw.position.y,camCrouchingHeight,playerCrouchSpeed*delta,camCrouchingHeight+(camCrouchAdjust*0.10))
 	else:
 		%headYaw.position.y = utils.lerp_toward(%headYaw.position.y,camStandingHeight,playerCrouchSpeed*delta,camStandingHeight-(camCrouchAdjust*0.10))
-		
 	camCrouchProgressCoef = snapped(inverse_lerp(camStandingHeight,camCrouchingHeight,%headYaw.position.y),0.01)
 	return
 
 func _get_current_stance() -> String:
-	if jumping:
+	if inputNoclip:
+		return "noclipping"
+	elif _is_in_water():
+		return "swimming"
+	elif jumping:
 		return "jumping"
 	elif camCrouchProgressCoef == 1:
 		if inputWalk:

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cwr8mi1c4yuqd"]
 
 [ext_resource type="Script" uid="uid://c7krc00rkyxfc" path="res://scripts/playerRayMovement.gd" id="1_ad82n"]
+[ext_resource type="Shader" uid="uid://d5jfbgi7hm1h" path="res://shaders/stylized_water_underwater_effect.gdshader" id="2_edi8m"]
+[ext_resource type="Script" uid="uid://cl4s0d05p3ict" path="res://scenes/supplementaries/underwaterEffector.gd" id="3_2xbkh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1yjhn"]
 friction = 0.0
@@ -17,6 +19,25 @@ radius = 0.25
 margin = 0.0
 height = 0.7
 radius = 0.25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_edi8m"]
+render_priority = 0
+shader = ExtResource("2_edi8m")
+shader_parameter/GLOBAL_TIME = 0.0
+shader_parameter/sea_height = 0.350000016625
+shader_parameter/sea_choppy = 2.000000095
+shader_parameter/sea_speed = 3.0000001425
+shader_parameter/sea_freq = 0.0400000019
+shader_parameter/height_offset = 0.0
+shader_parameter/underwater_color = Color(0.02, 0.18, 0.25, 1)
+shader_parameter/absorption_strength = 0.35
+shader_parameter/deep_tint_strength = 0.65
+shader_parameter/refraction_amount = 0.004
+shader_parameter/refraction_speed = 0.7
+shader_parameter/water_level_fudge = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vupha"]
+material = SubResource("ShaderMaterial_edi8m")
 
 [node name="rayPlayer" type="RigidBody3D" unique_id=841022728]
 axis_lock_angular_x = true
@@ -51,6 +72,16 @@ unique_name_in_owner = true
 
 [node name="headEyes" type="Camera3D" parent="headYaw/headPitch" unique_id=136943379]
 unique_name_in_owner = true
+
+[node name="underwaterEffector" type="MeshInstance3D" parent="headYaw/headPitch/headEyes" unique_id=1205665413]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26232535)
+mesh = SubResource("QuadMesh_vupha")
+script = ExtResource("3_2xbkh")
+
+[node name="waterProbe" type="Node3D" parent="headYaw" unique_id=696525768]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
 
 [node name="debugHUD" type="CanvasLayer" parent="." unique_id=553220387]
 unique_name_in_owner = true
