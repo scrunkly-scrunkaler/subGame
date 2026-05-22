@@ -79,9 +79,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 mesh = SubResource("QuadMesh_vupha")
 script = ExtResource("3_2xbkh")
 
-[node name="waterProbe" type="Node3D" parent="headYaw" unique_id=696525768]
+[node name="interactorRay" type="RayCast3D" parent="headYaw/headPitch" unique_id=372698590]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+target_position = Vector3(0, 0, -1.5)
+debug_shape_custom_color = Color(0, 0, 0, 0)
 
 [node name="debugHUD" type="CanvasLayer" parent="." unique_id=553220387]
 unique_name_in_owner = true
@@ -91,3 +92,6 @@ unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
 uppercase = true
+
+[node name="interactor" type="Node" parent="." unique_id=501888079]
+unique_name_in_owner = true

@@ -18,11 +18,12 @@ var playerHeadOffsetX:float = 0.00 			# (def: 0.00) the left/right offset from c
 var playerHeadOffsetY:float = 0.00			# (def: 0.00) the up/down offset from center upon which the camera is positioned (in meters)
 var playerHeadOffsetZ:float = 0.00 			# (def: 0.00) the forward/backward offset from center upon which the camera is positioned (in meters)
 
-var playerTPPOffsetX:float = 0.00			# (def: 0.00)
-var playerTPPOffsetY:float = -0.25			# (def: -0.25)
-var playerTPPOffsetZ:float = 2.00			# (def: 2.00)
-var playerTPPTransitionSpeed:float = 0.1		# (def: 4.00)
+var playerTPPOffsetX:float = 0.00			# (def: 0.00) the left/right offset from center while in debug TPP mode (in meters)
+var playerTPPOffsetY:float = -0.25			# (def: -0.25) the up/down offset from center while in debug TPP mode (in meters)
+var playerTPPOffsetZ:float = 2.00			# (def: 2.00) the forward/backward offset from center while in debug TPP mode (in meters)
+var playerTPPTransitionSpeed:float = 0.1	# (def: 0.10) the rate at which the camera transitions between perspectives
 
+var playerSwimHeightOffset:float = 0.4		# (def: -0.4) the offset from eye-level that determines when the player is considered to be swimmin (in meters).
 var playerStepHeightCoef:float = 0.30		# (def: 0.30) the coefficient of the player's total height that the player will automatically step up or down to when encountering uneven terrain (eg. stairs)
 
 ### player physics ###
@@ -33,7 +34,7 @@ var physBaseGroundSpeed:float = 5.72		# (def: 5.72) the base maximum speed the p
 var physBaseGroundAccelCoef:float = 10		# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while on the ground. Must be greater than decel value.
 var physBaseGroundDecelCoef:float = 6		# (def: 6.00) the base decelerative rate under which the player will stop moving while on the ground.
 var physBaseAirSpeed:float = 0.572			# (def: 0.572) the base maximum speed the player will accelerate to under their own power while in the air (in meters per second)
-var physBaseAirAccelCoef:float = 4			# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while in the air. Must be greater than decel value.
+var physBaseAirAccelCoef:float = 3			# (def: 10.0) the base accelerative rate under which the player will aproach the target speed while in the air. Must be greater than decel value.
 var physBaseAirDecelCoef:float = 0			# (def: 0.00) the base decelerative rate under which the player will stop moving while in the air.
 var physBaseSwimSpeed:float = 4.00			# (def: 4.00) the base maximum speed the player will accelerate to under their own power while swimming (in meters per second)
 var physBaseSwimAccelCoef:float = 5			# (def: 5.00) the base accelerative rate under which the player will aproach the target speed while swimming. Must be greater than decel value.
@@ -426,11 +427,18 @@ func _swimming_locomotion(delta:float) -> void:
 			targetVelocity.y = targetVelocity.y + (targetDir.y * accelDelta) # ]
 			targetVelocity.z = targetVelocity.z + (targetDir.z * accelDelta) # ]--- apply the new speed to the player's target velocity
 	
+	# since we're swimming, we want the player to sink if they're not actively moving.
+	var stoppedDownforce:float
+	if currentSpd < physBaseSwimSpeed * physSlowCrouchSpeedCoef:
+		stoppedDownforce = 0.7
+	else:
+		stoppedDownforce = 1.0
+	
 	# finally, we apply everything we calculated onto the player.
 	var force:Vector3
-	force.x = (targetVelocity.x - currentVelocity.x) / delta                     # ]
-	force.y = ((targetVelocity.y - currentVelocity.y) / delta) + physBaseGravity * 0.9 # ]--- determine how much force is required to reach the target velocity from the player's current velocity this frame.
-	force.z = (targetVelocity.z - currentVelocity.z) / delta                     # ]
+	force.x = (targetVelocity.x - currentVelocity.x) / delta
+	force.y = ((targetVelocity.y - currentVelocity.y) / delta) + (physBaseGravity * stoppedDownforce)
+	force.z = (targetVelocity.z - currentVelocity.z) / delta
 	self.apply_force(force * self.mass) # apply the force, accounting for the mass of the player's body.
 	return
 
@@ -560,7 +568,7 @@ func _is_on_floor() -> bool:
 
 func _is_in_water() -> bool:
 	#temp
-	if %waterProbe.global_position.y < 0.5:
+	if %headYaw.global_position.y - playerSwimHeightOffset < 0.5:
 		return true
 	return false
 
