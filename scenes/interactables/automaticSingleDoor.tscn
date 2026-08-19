@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dibei2nl5i1ys"]
-
-[node name="automaticSingleDoor" type="Node3D" unique_id=833507802]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1356329559]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1750001, 0)
-size = Vector3(0.1, 2.3500001, 1.2)

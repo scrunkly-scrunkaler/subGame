@@ -1,7 +1,7 @@
 shader_type spatial;
 
 // stencil_mode
-uniform float GLOBAL_TIME = 0.0;
+// uniform float TIME = 0.0;
 
 // screen/depth textures
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
@@ -177,7 +177,7 @@ float voronoi(vec2 uv) {
 		for (int i = -1; i <= 1; i++) {
 			vec2 g = vec2(float(i), float(j));
 			vec2 o = hash22(n + g);
-			o = 0.5 + 0.5 * sin(GLOBAL_TIME * foam_noise_speed + 6.2831 * o);
+			o = 0.5 + 0.5 * sin(TIME * foam_noise_speed + 6.2831 * o);
 			vec2 r = g - f + o;
 			float d = dot(r, r);
 			m_dist = min(m_dist, d);
@@ -226,14 +226,14 @@ float fbm_voronoi(vec2 uv) {
 
 void vertex() {
 	vec3 world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	wave_height = -map(world_pos, GLOBAL_TIME);
+	wave_height = -map(world_pos, TIME);
 	VERTEX.y = wave_height;
 	world_vert = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 
 	float vertex_eps = 0.1;
 	float h_center = wave_height;
-	float h_x = -map(world_pos + vec3(vertex_eps, 0.0, 0.0), GLOBAL_TIME);
-	float h_z = -map(world_pos + vec3(0.0, 0.0, vertex_eps), GLOBAL_TIME);
+	float h_x = -map(world_pos + vec3(vertex_eps, 0.0, 0.0), TIME);
+	float h_z = -map(world_pos + vec3(0.0, 0.0, vertex_eps), TIME);
 	vec3 n_geom = normalize(vec3(h_center - h_x, vertex_eps, h_center - h_z));
 	vertex_normal_world = n_geom;
 }
@@ -242,7 +242,7 @@ void fragment() {
 	// normals & distance smoothing
 	float dist_to_cam = length(VERTEX);
 	float lod_epsilon = max(normal_epsilon, dist_to_cam * 0.005);
-	vec3 detailed_normal = get_normal_detailed(world_vert, lod_epsilon, GLOBAL_TIME);
+	vec3 detailed_normal = get_normal_detailed(world_vert, lod_epsilon, TIME);
 	float smooth_factor = clamp((dist_to_cam - normal_smoothness_dist) / 200.0, 0.0, 1.0);
 	vec3 final_normal = mix(detailed_normal, vertex_normal_world, smooth_factor);
 	NORMAL = (VIEW_MATRIX * vec4(final_normal, 0.0)).xyz;
@@ -282,10 +282,10 @@ void fragment() {
 
 	if (thickness > 0.0) {
 		vec2 caustics_uv1 = bg_world_pos.xz * caustics_scale;
-		caustics_uv1.x += GLOBAL_TIME * caustics_speed;
+		caustics_uv1.x += TIME * caustics_speed;
 
 		vec2 caustics_uv2 = bg_world_pos.xz * caustics_scale * 0.7;
-		caustics_uv2.y -= GLOBAL_TIME * caustics_speed * 0.8;
+		caustics_uv2.y -= TIME * caustics_speed * 0.8;
 
 		float caustics_sample1 = texture(caustics_texture, caustics_uv1).r;
 		float caustics_sample2 = texture(caustics_texture, caustics_uv2).r;
@@ -315,7 +315,7 @@ void fragment() {
 	wave_crest_factor *= foam_crest_amount;
 	float foam_level = clamp(depth_foam_factor + wave_crest_factor, 0.0, 1.0);
 
-	vec2 flow_uv = world_vert.xz * 0.5 + GLOBAL_TIME * 0.05 * foam_noise_speed;
+	vec2 flow_uv = world_vert.xz * 0.5 + TIME * 0.05 * foam_noise_speed;
 	vec2 warp = vec2(
 		noise(flow_uv),
 		noise(flow_uv + vec2(5.2, 1.3))
@@ -324,7 +324,7 @@ void fragment() {
 	if (distorted_bg_depth > water_linear_depth) {
 		vec2 foam_uv = world_vert.xz * foam_noise_scale + warp;
 
-		float emergence_noise = noise3d(vec3(world_vert.xz * 0.5, GLOBAL_TIME * 0.2 * foam_noise_speed));
+		float emergence_noise = noise3d(vec3(world_vert.xz * 0.5, TIME * 0.2 * foam_noise_speed));
 		emergence_noise = smoothstep(0.0, 1.0, emergence_noise * 0.5 + 0.5);
 		float effective_emergence = mix(emergence_noise, 1.0, foam_level);
 

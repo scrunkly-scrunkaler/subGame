@@ -14,7 +14,7 @@
 [ext_resource type="Material" uid="uid://cgijj0nqliu4m" path="res://assets/trenchbroom assets/textures/dev textures/dev_normal.tres" id="11_12ssg"]
 [ext_resource type="Texture2D" uid="uid://c0n27vap5u18f" path="res://assets/trenchbroom assets/textures/dev textures/dev_measurecrate02.png" id="11_e7fuv"]
 [ext_resource type="Texture2D" uid="uid://csugyvrgnj3ln" path="res://assets/trenchbroom assets/textures/dev textures/dev_measurecrate01.png" id="12_x7as0"]
-[ext_resource type="PackedScene" uid="uid://clq7hqjoyogoq" path="res://scenes/players/playerSourceMovement.tscn" id="15_e7fuv"]
+[ext_resource type="PackedScene" uid="uid://clq7hqjoyogoq" path="res://scenes/players/playerSourceMovement/playerSourceMovement.tscn" id="15_e7fuv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygtq1"]
 albedo_texture = ExtResource("10_2jsrn")
